@@ -1,0 +1,21 @@
+<!-- Footer
+================================================== -->
+<footer class="bs-docs-footer" role="contentinfo">
+  <div class="container">
+	<ul class="bs-docs-footer-links muted">
+      <li>Currently v{{ site.current_version }} </li>
+      <li>&middot;</li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ site.baseurl }}/assets/libs/jquery-1.8.3.js"></script>
+<script src="{{ site.baseurl }}/assets/libs/firework.js"></script>
+<script src="{{ site.baseurl }}/dist/js/bootstrap.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/docs.min.js"></script>
+{% if page.slug == "customize" %}
+<script src="{{ site.baseurl }}/assets/js/customize.min.js"></script>
+{% endif %}

@@ -1,0 +1,2528 @@
+/* CSS Document */
+
+#show {
+    height: 200px;
+    width: 200px;
+    border: 1px #000000 solid;
+    visibility: visible
+}
+
+.divShow {
+    border: 1px solid #000000;
+    border-radius: 4px;
+    height: 26px;
+    padding: 5px;
+    text-align: center;
+    width: 200px;
+}
+
+.close {
+    border: 1px solid #000000;
+    border-radius: 4px;
+    color: red;
+    font-size: 30px;
+    height: 26px;
+    left: 346px;
+    padding: 5px;
+    position: relative;
+    top: 50px;
+    width: 80px;
+    z-index: 3000;
+}
+
+.md-modal {
+    background-color: #CC6600;
+    border: 1px solid #000000;
+    height: 500px;
+    left: 280px;
+    width: 800px;
+    top: 10px;
+    position: fixed;
+    z-index: 2000;
+    display: none;
+    -webkit-backface-
+    -moz-backface-
+    backface-
+    /*	-webkit-transform: translateX(-50%) translateY(-50%);
+    	-moz-transform: translateX(-50%) translateY(-50%);
+    	-ms-transform: translateX(-50%) translateY(-50%);
+    	transform: translateX(-50%) translateY(-50%);*/
+}
+
+.md-show {
+    opacity: 1;
+}
+
+.md-content button {
+    display: block;
+    margin: 0 auto;
+    font-size: 0.8em;
+}
+
+/* Individual modal styles with animations/transitions */
+
+/* Effect 1: Fade in and scale up */
+
+@-webkit-keyframes FadinScaleShow {
+    0% {
+        -webkit-transform: scale(0.7);
+        -webkit-opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        -webkit-opacity: 1;
+    }
+}
+
+@-moz-keyframes FadinScaleShow {
+    0% {
+        -moz-transform: scale(0.7);
+        -moz-opacity: 0;
+        -moz-transition: all 0.3s;
+    }
+    100% {
+        -moz-transform: scale(1);
+        -moz-opacity: 1;
+    }
+}
+
+@-o-keyframes FadinScaleShow {
+    0% {
+        -o-transform: scale(0.7);
+        -o-opacity: 0;
+        -o-transition: all 0.3s;
+    }
+    100% {
+        -o-transform: scale(1);
+        -o-opacity: 1;
+    }
+}
+
+@keyframes FadinScaleShow {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.fadinscaleshow {
+    animation: FadinScaleShow 1s;
+    -moz-animation: FadinScaleShow 1s;
+    -ms-animation: FadinScaleShow 1s;
+    -webkit-animation: FadinScaleShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes FadinScaleHide {
+    0% {
+        -webkit-transform: scale(1);
+        -webkit-opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(0.7);
+        -webkit-opacity: 0;
+        -webkit-transition: all 0.3s;
+        didplay: none;
+    }
+}
+
+@-moz-keyframes FadinScaleHide {
+    0% {
+        -moz-transform: scale(1);
+        -moz-opacity: 1;
+    }
+    100% {
+        -moz-transform: scale(0.7);
+        -moz-opacity: 0;
+        -moz-transition: all 0.3s;
+        didplay: none;
+    }
+}
+
+@-o-keyframes FadinScaleHide {
+    0% {
+        -o-transform: scale(1);
+        -o-opacity: 1;
+    }
+    100% {
+        -o-transform: scale(0.7);
+        -o-opacity: 0;
+        -o-transition: all 0.3s;
+        didplay: none;
+    }
+}
+
+@keyframes FadinScaleHide {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.7);
+        opacity: 0;
+        transition: all 0.3s;
+        didplay: none;
+    }
+}
+
+.fadinscalehide {
+    animation: FadinScaleHide 1s;
+    -moz-animation: FadinScaleHide 1s;
+    -o-animation: FadinScaleHide 1s;
+    -webkit-animation: FadinScaleHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+/* Effect 2: Slide from the right */
+@-webkit-keyframes SlideinrightShow {
+    0% {
+        -webkit-transform: translateX(20%);
+        -webkit-opacity: 0;
+        -webkit-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        -webkit-opacity: 1;
+    }
+}
+
+@-moz-keyframes SlideinrightShow {
+    0% {
+        -moz-transform: translateX(20%);
+        -moz-opacity: 0;
+        -moz-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    }
+    100% {
+        -moz-transform: translateX(0);
+        -moz-opacity: 1;
+    }
+}
+
+@-o-keyframes SlideinrightShow {
+    0% {
+        -moz-transform: translateX(20%);
+        -o-opacity: 0;
+        -o-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    }
+    100% {
+        -o-transform: translateX(0);
+        -o-opacity: 1;
+    }
+}
+
+@keyframes SlideinrightShow {
+    0% {
+        transform: translateX(20%);
+        opacity: 0;
+        transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.slideinrightshow {
+    animation: SlideinrightShow 1s;
+    -moz-animation: SlideinrightShow 1s;
+    -ms-animation: SlideinrightShow 1s;
+    -webkit-animation: SlideinrightShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes SlideinrightHide {
+    0% {
+        -webkit-transform: translateX(0);
+        -webkit-opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateX(20%);
+        -webkit-opacity: 0;
+        -webkit-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    }
+}
+
+@-moz-keyframes SlideinrightHide {
+    0% {
+        -moz-transform: translateX(0);
+        -moz-opacity: 1;
+    }
+    100% {
+        -moz-transform: translateX(20%);
+        -moz-opacity: 0;
+        -moz-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    }
+}
+
+@-o-keyframes SlideinrightHide {
+    0% {
+        -o-transform: translateX(0);
+        -o-opacity: 1;
+    }
+    100% {
+        -o-transform: translateX(20%);
+        -o-opacity: 0;
+        -o-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    }
+}
+
+@keyframes SlideinrightHide {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(20%);
+        opacity: 0;
+        transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+    }
+}
+
+.slideinrighthide {
+    animation: SlideinrightHide 1s;
+    -moz-animation: SlideinrightHide 1s;
+    -o-animation: SlideinrightHide 1s;
+    -webkit-animation: SlideinrightHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+/* Effect 3: Slide from the bottom */
+@-webkit-keyframes SlidBottomShow {
+    0% {
+        -webkit-transform: translateY(20%);
+        -webkit-opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        -webkit-opacity: 1;
+    }
+}
+
+@-moz-keyframes SlidBottomShow {
+    0% {
+        -moz-transform: translateY(20%);
+        -moz-opacity: 0;
+        -moz-transition: all 0.3s;
+    }
+    100% {
+        -moz-transform: translateY(0);
+        -moz-opacity: 1;
+    }
+}
+
+@-o-keyframes SlidBottomShow {
+    0% {
+        -o-transform: translateY(20%);
+        -o-opacity: 0;
+        -o-transition: all 0.3s;
+    }
+    100% {
+        -o-transform: translateY(0);
+        -o-opacity: 1;
+    }
+}
+@keyframes SlidBottomShow {
+    0% {
+        transform: translateY(20%);
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.slidbottomshow {
+    animation: SlidBottomShow 1s;
+    -moz-animation: SlidBottomShow 1s;
+    -o-animation: SlidBottomShow 1s;
+    -webkit-animation: SlidBottomShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes SlidBottomHide {
+    0% {
+        -webkit-transform: translateY(0);
+        -webkit-opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(20%);
+        -webkit-opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+}
+
+@-moz-keyframes SlidBottomHide {
+    0% {
+        -moz-transform: translateY(0);
+        -moz-opacity: 1;
+    }
+    100% {
+        -moz-transform: translateY(20%);
+        -moz-opacity: 0;
+        -moz-transition: all 0.3s;
+    }
+}
+
+@-o-keyframes SlidBottomHide {
+    0% {
+        -o-transform: translateY(0);
+        -o-opacity: 1;
+    }
+    100% {
+        -o-transform: translateY(20%);
+        -o-opacity: 0;
+        -o-transition: all 0.3s;
+    }
+}
+@keyframes SlidBottomHide {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(20%);
+        opacity: 0;
+        transition: all 0.3s;
+    }
+}
+
+.slidbottomhide {
+    animation: SlidBottomHide 1s;
+    -moz-animation: SlidBottomHide 1s;
+    -o-animation: SlidBottomHide 1s;
+    -webkit-animation: SlidBottomHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+.md-effect-3 {
+    -webkit-transform: translateY(20%);
+    -webkit-opacity: 0;
+    -webkit-transition: all 0.3s;
+}
+
+.show-md-effect-3 {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+}
+
+/* Effect 4: Newspaper */
+@-webkit-keyframes NewspaperShow {
+    0% {
+        -webkit-transform: scale(0) rotate(720deg);
+        -webkit-opacity: 0;
+    }
+    100% {
+        -webkit-transform: scale(1) rotate(0deg);
+        -webkit-opacity: 1;
+    }
+}
+
+@-moz-keyframes NewspaperShow {
+    0% {
+        -moz-transform: scale(0) rotate(720deg);
+        -moz-opacity: 0;
+    }
+    100% {
+        -moz-transform: scale(1) rotate(0deg);
+        -moz-opacity: 1;
+    }
+}
+
+@-o-keyframes NewspaperShow {
+    0% {
+        -o-transform: scale(0) rotate(720deg);
+        -o-opacity: 0;
+    }
+    100% {
+        -o-transform: scale(1) rotate(0deg);
+        -o-opacity: 1;
+    }
+}
+
+@keyframes NewspaperShow {
+    0% {
+        transform: scale(0) rotate(720deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.newspapershow {
+    animation: NewspaperShow 1s;
+    -moz-animation: NewspaperShow 1s;
+    -o-animation: NewspaperShow 1s;
+    -webkit-animation: NewspaperShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes NewspaperHide {
+    0% {
+        -webkit-transform: scale(1) rotate(0deg);
+        -webkit-opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(0) rotate(720deg);
+        -webkit-opacity: 0;
+    }
+}
+
+@-moz-keyframes NewspaperHide {
+    0% {
+        -moz-transform: scale(1) rotate(0deg);
+        -moz-opacity: 1;
+    }
+    100% {
+        -moz-transform: scale(0) rotate(720deg);
+        -moz-opacity: 0;
+    }
+}
+
+@-o-keyframes NewspaperHide {
+    0% {
+        -o-transform: scale(1) rotate(0deg);
+        -o-opacity: 1;
+    }
+    100% {
+        -o-transform: scale(0) rotate(720deg);
+        -o-opacity: 0;
+    }
+}
+
+@keyframes NewspaperHide {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.newspaperhide {
+    animation: NewspaperHide 1s;
+    -moz-animation: NewspaperHide 1s;
+    -o-animation: NewspaperHide 1s;
+    -webkit-animation: NewspaperHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+.md-effect-4 {
+    -webkit-transform: scale(0) rotate(720deg);
+    opacity: 0;
+}
+
+.show-md-effect-4 {
+    -webkit-transform: scale(1) rotate(0deg);
+    opacity: 1;
+}
+
+/* Effect 5: fall */
+@-webkit-keyframes fallShow {
+    0% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: translateZ(600px) rotateX(20deg);
+        -webkit-opacity: 0;
+    }
+    100% {
+        -webkit-transition: all 0.3s ease-in;
+        -webkit-transform: translateZ(0px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fallShow {
+    0% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: translateZ(600px) rotateX(20deg);
+        -moz-opacity: 0;
+    }
+    100% {
+        -moz-transition: all 0.3s ease-in;
+        -moz-transform: translateZ(0px) rotateX(0deg);
+        -moz-opacity: 1;
+    }
+}
+
+@-o-keyframes fallShow {
+    0% {
+        -o-transform-style: preserve-3d;
+        -o-transform: translateZ(600px) rotateX(20deg);
+        -o-opacity: 0;
+    }
+    100% {
+        -o-transition: all 0.3s ease-in;
+        -o-transform: translateZ(0px) rotateX(0deg);
+        -o-opacity: 1;
+    }
+}
+
+@keyframes fallShow {
+    0% {
+        transform-style: preserve-3d;
+        transform: translateZ(600px) rotateX(20deg);
+        opacity: 0;
+    }
+    100% {
+        transition: all 0.3s ease-in;
+        transform: translateZ(0px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+.fallshow {
+    animation: fallShow 1s;
+    -moz-animation: fallShow 1s;
+    -o-animation: fallShow 1s;
+    -webkit-animation: fallShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+@-webkit-keyframes fallHide {
+    0% {
+        -webkit-transition: all 0.3s ease-in;
+        -webkit-transform: translateZ(0px) rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: translateZ(600px) rotateX(20deg);
+        -webkit-opacity: 0;
+    }
+}
+
+@-moz-keyframes fallHide {
+    0% {
+        -moz-transition: all 0.3s ease-in;
+        -moz-transform: translateZ(0px) rotateX(0deg);
+        -moz-opacity: 1;
+    }
+    100% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: translateZ(600px) rotateX(20deg);
+        -moz-opacity: 0;
+    }
+}
+
+@-o-keyframes fallHide {
+    0% {
+        -o-transition: all 0.3s ease-in;
+        -o-transform: translateZ(0px) rotateX(0deg);
+        -o-opacity: 1;
+    }
+    100% {
+        -o-transform-style: preserve-3d;
+        -o-transform: translateZ(600px) rotateX(20deg);
+        -o-opacity: 0;
+    }
+}
+
+@keyframes fallHide {
+    0% {
+        transition: all 0.3s ease-in;
+        transform: translateZ(0px) rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform-style: preserve-3d;
+        transform: translateZ(600px) rotateX(20deg);
+        opacity: 0;
+    }
+}
+
+.fallhide {
+    animation: fallHide 1s;
+    -moz-animation: fallHide 1s;
+    -o-animation: fallHide 1s;
+    -webkit-animation: fallHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+.md-effect-5 {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: translateZ(600px) rotateX(20deg);
+    opacity: 0;
+}
+
+.show-md-effect-5 {
+    -webkit-transition: all 0.3s ease-in;
+    -webkit-transform: translateZ(0px) rotateX(0deg);
+    opacity: 1;
+}
+
+/* Effect 6: side fall */
+@-webkit-keyframes sideFallShow {
+    0% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: translate(30%) translateZ(600px) rotate(10deg);
+        -webkit-opacity: 0;
+    }
+    100% {
+        -webkit-transition: all 0.3s ease-in;
+        -webkit-transform: translate(0%) translateZ(0) rotate(0deg);
+        -webkit-opacity: 1;
+    }
+}
+
+@-moz-keyframes sideFallShow {
+    0% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: translate(30%) translateZ(600px) rotate(10deg);
+        -moz-opacity: 0;
+    }
+    100% {
+        -moz-transition: all 0.3s ease-in;
+        -moz-transform: translate(0%) translateZ(0) rotate(0deg);
+        -moz-opacity: 1;
+    }
+}
+
+@-o-keyframes sideFallShow {
+    0% {
+        -o-transform-style: preserve-3d;
+        -o-transform: translate(30%) translateZ(600px) rotate(10deg);
+        -o-opacity: 0;
+    }
+    100% {
+        -o-transition: all 0.3s ease-in;
+        -o-transform: translate(0%) translateZ(0) rotate(0deg);
+        -o-opacity: 1;
+    }
+}
+
+@keyframes sideFallShow {
+    0% {
+        transform-style: preserve-3d;
+        transform: translate(30%) translateZ(600px) rotate(10deg);
+        opacity: 0;
+    }
+    100% {
+        transition: all 0.3s ease-in;
+        transform: translate(0%) translateZ(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.sidefallshow {
+    animation: sideFallShow 1s;
+    -moz-animation: sideFallShow 1s;
+    -o-animation: sideFallShow 1s;
+    -webkit-animation: sideFallShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes sideFallHide {
+    0% {
+        -webkit-transition: all 0.3s ease-in;
+        -webkit-transform: translate(0%) translateZ(0) rotate(0deg);
+        -webkit-opacity: 1;
+    }
+    100% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: translate(30%) translateZ(600px) rotate(10deg);
+        -webkit-opacity: 0;
+    }
+}
+
+@-moz-keyframes sideFallHide {
+    0% {
+        -moz-transition: all 0.3s ease-in;
+        -moz-transform: translate(0%) translateZ(0) rotate(0deg);
+        -moz-opacity: 1;
+    }
+    100% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: translate(30%) translateZ(600px) rotate(10deg);
+        -moz-opacity: 0;
+    }
+}
+
+@-o-keyframes sideFallHide {
+    0% {
+        -o-transition: all 0.3s ease-in;
+        -o-transform: translate(0%) translateZ(0) rotate(0deg);
+        -o-opacity: 1;
+    }
+    100% {
+        -o-transform-style: preserve-3d;
+        -o-transform: translate(30%) translateZ(600px) rotate(10deg);
+        -o-opacity: 0;
+    }
+}
+
+@keyframes sideFallHide {
+    0% {
+        transition: all 0.3s ease-in;
+        transform: translate(0%) translateZ(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform-style: preserve-3d;
+        transform: translate(30%) translateZ(600px) rotate(10deg);
+        opacity: 0;
+    }
+}
+
+.sidefallhide {
+    animation: sideFallHide 1s;
+    -moz-animation: sideFallHide 1s;
+    -o-animation: sideFallHide 1s;
+    -webkit-animation: sideFallHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+.md-effect-6 {
+    -webkit-perspective: 1300px;
+    -moz-perspective: 1300px;
+    perspective: 1300px;
+}
+
+.md-effect-6 {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: translate(30%) translateZ(600px) rotate(10deg);
+    opacity: 0;
+}
+
+.show-md-effect-6 {
+    visibility: visible;
+    -webkit-transition: all 0.3s ease-in;
+    -webkit-transform: translate(0%) translateZ(0) rotate(0deg);
+    opacity: 1;
+}
+
+/* Effect 7:  slide and stick to top */
+@-webkit-keyframes stickUpShow {
+    0% {
+        -webkit-transform: translateY(-200%);
+        -webkit-transition: all .3s;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -webkit-transform: translateY(0%);
+        border-radius: 0 0 3px 3px;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes stickUpShow {
+    0% {
+        -moz-transform: translateY(-200%);
+        -moz-transition: all .3s;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -moz-transform: translateY(0%);
+        border-radius: 0 0 3px 3px;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes stickUpShow {
+    0% {
+        -o-transform: translateY(-200%);
+        -o-transition: all .3s;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -o-transform: translateY(0%);
+        border-radius: 0 0 3px 3px;
+        opacity: 1;
+    }
+}
+
+@keyframes stickUpShow {
+    0% {
+        transform: translateY(-200%);
+        transition: all .3s;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        transform: translateY(0%);
+        border-radius: 0 0 3px 3px;
+        opacity: 1;
+    }
+}
+
+.stickupshow {
+    
+    animation: stickUpShow 1s;
+    -moz-animation: stickUpShow 1s;
+    -o-animation: stickUpShow 1s;
+    -webkit-animation: stickUpShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes stickUpHide {
+    0% {
+        visibility: visible;
+        -webkit-transform: translateY(0%);
+        border-radius: 0 0 3px 3px;
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(-200%);
+        -webkit-transition: all .3s;
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes stickUpHide {
+    0% {
+        visibility: visible;
+        -moz-transform: translateY(0%);
+        border-radius: 0 0 3px 3px;
+        opacity: 1;
+    }
+    100% {
+        -moz-transform: translateY(-200%);
+        -moz-transition: all .3s;
+        opacity: 0;
+    }
+}
+
+@-o-keyframes stickUpHide {
+    0% {
+        visibility: visible;
+        -o-transform: translateY(0%);
+        border-radius: 0 0 3px 3px;
+        opacity: 1;
+    }
+    100% {
+        -o-transform: translateY(-200%);
+        -o-transition: all .3s;
+        opacity: 0;
+    }
+}
+
+@keyframes stickUpHide {
+    0% {
+        visibility: visible;
+        transform: translateY(0%);
+        border-radius: 0 0 3px 3px;
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200%);
+        transition: all .3s;
+        opacity: 0;
+    }
+}
+
+.stickuphide {
+    
+    animation: stickUpHide 1s;
+    -moz-animation: stickUpHide 1s;
+    -o-animation: stickUpHide 1s;
+    -webkit-animation: stickUpHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+.md-effect-7 {
+    top: 0;
+    -webkit-transform: translateX(-50%);
+}
+
+.md-effect-7 {
+    -webkit-transform: translateY(-200%);
+    -webkit-transition: all .3s;
+    opacity: 0;
+}
+
+.show-md-effect-7 {
+    visibility: visible;
+    -webkit-transform: translateY(0%);
+    border-radius: 0 0 3px 3px;
+    opacity: 1;
+}
+
+/* Effect 8: 3D flip horizontal */
+@-webkit-keyframes flipHorizontalShow {
+    0% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: rotateY(-70deg);
+        -webkit-transition: all 0.3s;
+        -webkit-opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -webkit-transform: rotateY(0deg);
+        -webkit-opacity: 1;
+    }
+}
+
+@-moz-keyframes flipHorizontalShow {
+    0% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: rotateY(-70deg);
+        -moz-transition: all 0.3s;
+        -moz-opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -moz-transform: rotateY(0deg);
+        -moz-opacity: 1;
+    }
+}
+
+@-o-keyframes flipHorizontalShow {
+    0% {
+        -o-transform-style: preserve-3d;
+        -o-transform: rotateY(-70deg);
+        -o-transition: all 0.3s;
+        -o-opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -o-transform: rotateY(0deg);
+        -o-opacity: 1;
+    }
+}
+
+@keyframes flipHorizontalShow {
+    0% {
+        transform-style: preserve-3d;
+        transform: rotateY(-70deg);
+        transition: all 0.3s;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+.fliphorizontalshow {
+    
+    animation: flipHorizontalShow 1s;
+    -moz-animation: flipHorizontalShow 1s;
+    -o-animation: flipHorizontalShow 1s;
+    -webkit-animation: flipHorizontalShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes flipHorizontalHide {
+    0% {
+        visibility: visible;
+        -webkit-transform: rotateY(0deg);
+        -webkit-opacity: 1;
+    }
+    100% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: rotateY(-70deg);
+        -webkit-transition: all 0.3s;
+        -webkit-opacity: 0;
+    }
+}
+
+@-moz-keyframes flipHorizontalHide {
+    0% {
+        visibility: visible;
+        -moz-transform: rotateY(0deg);
+        -moz-opacity: 1;
+    }
+    100% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: rotateY(-70deg);
+        -moz-transition: all 0.3s;
+        -moz-opacity: 0;
+    }
+}
+
+@-o-keyframes flipHorizontalHide {
+    0% {
+        visibility: visible;
+        -o-transform: rotateY(0deg);
+        -o-opacity: 1;
+    }
+    100% {
+        -o-transform-style: preserve-3d;
+        -o-transform: rotateY(-70deg);
+        -o-transition: all 0.3s;
+        -o-opacity: 0;
+    }
+}
+
+@keyframes flipHorizontalHide {
+    0% {
+        visibility: visible;
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform-style: preserve-3d;
+        transform: rotateY(-70deg);
+        transition: all 0.3s;
+        opacity: 0;
+    }
+}
+
+.fliphorizontalhide {
+    
+    animation: flipHorizontalHide 1s;
+    -moz-animation: flipHorizontalHide 1s;
+    -o-animation: flipHorizontalHide 1s;
+    -webkit-animation: flipHorizontalHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+.md-effect-8 {
+    -webkit-perspective: 1300px;
+    -moz-perspective: 1300px;
+    perspective: 1300px;
+}
+
+
+/* Effect 9: 3D flip vertical */
+@-webkit-keyframes flipVerticalShow {
+    0% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: rotateX(-70deg);
+        -webkit-transition: all 0.3s;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -webkit-transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes flipVerticalShow {
+    0% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: rotateX(-70deg);
+        -moz-transition: all 0.3s;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -moz-transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes flipVerticalShow {
+    0% {
+        -o-transform-style: preserve-3d;
+        -o-transform: rotateX(-70deg);
+        -o-transition: all 0.3s;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -o-transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes flipVerticalShow {
+    0% {
+        transform-style: preserve-3d;
+        transform: rotateX(-70deg);
+        transition: all 0.3s;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+.flipverticalshow {
+    animation: flipVerticalShow 1s;
+    -moz-animation: flipVerticalShow 1s;
+    -o-animation: flipVerticalShow 1s;
+    -webkit-animation: flipVerticalShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes flipVerticalHide {
+    0% {
+        visibility: visible;
+        -webkit-transform: rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: rotateX(-70deg);
+        -webkit-transition: all 0.3s;
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes flipVerticalHide {
+    0% {
+        visibility: visible;
+        -moz-transform: rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: rotateX(-70deg);
+        -moz-transition: all 0.3s;
+        opacity: 0;
+    }
+}
+
+@-o-keyframes flipVerticalHide {
+    0% {
+        visibility: visible;
+        -o-transform: rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        -o-transform-style: preserve-3d;
+        -o-transform: rotateX(-70deg);
+        -o-transition: all 0.3s;
+        opacity: 0;
+    }
+}
+
+@keyframes flipVerticalHide {
+    0% {
+        visibility: visible;
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform-style: preserve-3d;
+        transform: rotateX(-70deg);
+        transition: all 0.3s;
+        opacity: 0;
+    }
+}
+
+.flipverticalhide {
+    animation: flipVerticalHide 1s;
+    -moz-animation: flipVerticalHide 1s;
+    -o-animation: flipVerticalHide 1s;
+    -webkit-animation: flipVerticalHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+.md-effect-9 {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateX(-70deg);
+    -webkit-transition: all 0.3s;
+    opacity: 0;
+}
+
+.show-md-effect-9 {
+    visibility: visible;
+    -webkit-transform: rotateX(0deg);
+    opacity: 1;
+}
+
+/* Effect 10: 3D sign */
+@-webkit-keyframes signShow {
+    0% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: rotateX(-60deg);
+        -webkit-transform-origin: 50% 0;
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -webkit-transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes signShow {
+    0% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: rotateX(-60deg);
+        -moz-transform-origin: 50% 0;
+        opacity: 0;
+        -moz-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -moz-transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes signShow {
+    0% {
+        -o-transform-style: preserve-3d;
+        -o-transform: rotateX(-60deg);
+        -o-transform-origin: 50% 0;
+        opacity: 0;
+        -o-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -o-transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes signShow {
+    0% {
+        transform-style: preserve-3d;
+        transform: rotateX(-60deg);
+        transform-origin: 50% 0;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+.signshow {
+    animation: signShow 1s;
+    -moz-animation: signShow 1s;
+    -o-animation: signShow 1s;
+    -webkit-animation: signShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes signHide {
+    0% {
+        visibility: visible;
+        -webkit-transform: rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: rotateX(-60deg);
+        -webkit-transform-origin: 50% 0;
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+}
+
+@-moz-keyframes signHide {
+    0% {
+        visibility: visible;
+        -moz-transform: rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: rotateX(-60deg);
+        -moz-transform-origin: 50% 0;
+        opacity: 0;
+        -moz-transition: all 0.3s;
+    }
+}
+
+@-o-keyframes signHide {
+    0% {
+        visibility: visible;
+        -o-transform: rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        -o-transform-style: preserve-3d;
+        -o-transform: rotateX(-60deg);
+        -o-transform-origin: 50% 0;
+        opacity: 0;
+        -o-transition: all 0.3s;
+    }
+}
+
+@keyframes signHide {
+    0% {
+        visibility: visible;
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform-style: preserve-3d;
+        transform: rotateX(-60deg);
+        transform-origin: 50% 0;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+}
+
+.signhide {
+    animation: signHide 1s;
+    -moz-animation: signHide 1s;
+    -o-animation: signHide 1s;
+    -webkit-animation: signHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+.md-effect-10 {
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateX(-60deg);
+    -webkit-transform-origin: 50% 0;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+}
+
+.show-md-effect-10 {
+    visibility: visible;
+    -webkit-transform: rotateX(0deg);
+    opacity: 1;
+}
+
+/* Effect 11: Super scaled */
+@-webkit-keyframes superScaledShow {
+    0% {
+        -webkit-transform: scale(2);
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes superScaledShow {
+    0% {
+        -moz-transform: scale(2);
+        opacity: 0;
+        -moz-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -moz-transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes superScaledShow {
+    0% {
+        -o-transform: scale(2);
+        opacity: 0;
+        -o-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -o-transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes superScaledShow {
+    0% {
+        transform: scale(2);
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.superscaledshow {
+    animation: superScaledShow 1s;
+    -moz-animation: superScaledShow 1s;
+    -o-animation: superScaledShow 1s;
+    -webkit-animation: superScaledShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+@-webkit-keyframes superScaledHide {
+    0% {
+        visibility: visible;
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(2);
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+}
+
+@-moz-keyframes superScaledHide {
+    0% {
+        visibility: visible;
+        -moz-transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        -moz-transform: scale(2);
+        opacity: 0;
+        -moz-transition: all 0.3s;
+    }
+}
+
+@-o-keyframes superScaledHide {
+    0% {
+        visibility: visible;
+        -o-transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        -o-transform: scale(2);
+        opacity: 0;
+        -o-transition: all 0.3s;
+    }
+}
+
+@keyframes superScaledHide {
+    0% {
+        visibility: visible;
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+        transition: all 0.3s;
+    }
+}
+
+.superscaledhide {
+    animation: superScaledHide 1s;
+    -moz-animation: superScaledHide 1s;
+    -o-animation: superScaledHide 1s;
+    -webkit-animation: superScaledHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+/* Effect 12:  Just me */
+@-webkit-keyframes justMeShow {
+    0% {
+        -webkit-transform: scale(0.8);
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes justMeShow {
+    0% {
+        -moz-transform: scale(0.8);
+        opacity: 0;
+        -moz-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -moz-transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes justMeShow {
+    0% {
+        -o-transform: scale(0.8);
+        opacity: 0;
+        -o-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -o-transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes justMeShow {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.justmeshow {
+    animation: justMeShow 1s;
+    -moz-animation: justMeShow 1s;
+    -o-animation: justMeShow 1s;
+    -webkit-animation: justMeShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes justMeHide {
+    0% {
+        visibility: visible;
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(0.8);
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+}
+
+@-moz-keyframes justMeHide {
+    0% {
+        visibility: visible;
+        -moz-transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        -moz-transform: scale(0.8);
+        opacity: 0;
+        -moz-transition: all 0.3s;
+    }
+}
+
+@-o-keyframes justMeHide {
+    0% {
+        visibility: visible;
+        -o-transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        -o-transform: scale(0.8);
+        opacity: 0;
+        -o-transition: all 0.3s;
+    }
+}
+
+@keyframes justMeHide {
+    0% {
+        visibility: visible;
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0;
+        transition: all 0.3s;
+    }
+}
+
+.justmehide {
+    animation: justMeHide 1s;
+    -moz-animation: justMeHide 1s;
+    -o-animation: justMeHide 1s;
+    -webkit-animation: justMeHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+.md-effect-12 {
+    -webkit-transform: scale(0.8);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+}
+
+.show-md-effect-12 {
+    visibility: visible;
+    -webkit-transform: scale(1);
+    opacity: 1;
+}
+
+/* Effect 13: 3D slit */
+@-webkit-keyframes slitShow {
+    0% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: translateZ(-3000px) rotateY(90deg);
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -webkit-animation: slit .7s forwards ease-out;
+    }
+}
+
+@-moz-keyframes slitShow {
+    0% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: translateZ(-3000px) rotateY(90deg);
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -moz-animation: slit .7s forwards ease-out;
+    }
+}
+
+@-o-keyframes slitShow {
+    0% {
+        -o-transform-style: preserve-3d;
+        -o-transform: translateZ(-3000px) rotateY(90deg);
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -o-animation: slit .7s forwards ease-out;
+    }
+}
+
+@keyframes slitShow {
+    0% {
+        transform-style: preserve-3d;
+        transform: translateZ(-3000px) rotateY(90deg);
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        animation: slit .7s forwards ease-out;
+    }
+}
+
+.slitshow {
+    animation: slitShow 1s;
+    -moz-animation: slitShow 1s;
+    -o-animation: slitShow 1s;
+    -webkit-animation: slitShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes slitHide {
+    0% {
+        visibility: visible;
+        -webkit-animation: slit .7s forwards ease-out;
+    }
+    100% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: translateZ(-3000px) rotateY(90deg);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes slitHide {
+    0% {
+        visibility: visible;
+        -moz-animation: slit .7s forwards ease-out;
+    }
+    100% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: translateZ(-3000px) rotateY(90deg);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes slitHide {
+    0% {
+        visibility: visible;
+        -o-animation: slit .7s forwards ease-out;
+    }
+    100% {
+        -o-transform-style: preserve-3d;
+        -o-transform: translateZ(-3000px) rotateY(90deg);
+        opacity: 0;
+    }
+}
+
+@keyframes slitHide {
+    0% {
+        visibility: visible;
+        animation: slit .7s forwards ease-out;
+    }
+    100% {
+        transform-style: preserve-3d;
+        transform: translateZ(-3000px) rotateY(90deg);
+        opacity: 0;
+    }
+}
+
+.slithide {
+    animation: slitHide 1s;
+    -moz-animation: slitHide 1s;
+    -o-animation: slitHide 1s;
+    -webkit-animation: slitHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+/* Effect 14:  3D Rotate from bottom */
+@-webkit-keyframes rotateBottomShow {
+    0% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: translateY(100%) rotateX(90deg);
+        -webkit-transform-origin: 0 100%;
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-out;
+    }
+    100% {
+        -webkit-transform: translateY(0%) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes rotateBottomShow {
+    0% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: translateY(100%) rotateX(90deg);
+        -moz-transform-origin: 0 100%;
+        opacity: 0;
+        -moz-transition: all 0.3s ease-out;
+    }
+    100% {
+        -moz-transform: translateY(0%) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes rotateBottomShow {
+    0% {
+        -o-transform-style: preserve-3d;
+        -o-transform: translateY(100%) rotateX(90deg);
+        -o-transform-origin: 0 100%;
+        opacity: 0;
+        -o-transition: all 0.3s ease-out;
+    }
+    100% {
+        -o-transform: translateY(0%) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes rotateBottomShow {
+    0% {
+        transform-style: preserve-3d;
+        transform: translateY(100%) rotateX(90deg);
+        transform-origin: 0 100%;
+        opacity: 0;
+        transition: all 0.3s ease-out;
+    }
+    100% {
+        transform: translateY(0%) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+.rotatebottomshow {
+    animation: rotateBottomShow 1s;
+    -moz-animation: rotateBottomShow 1s;
+    -o-animation: rotateBottomShow 1s;
+    -webkit-animation: rotateBottomShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes rotateBottomHide {
+    0% {
+        -webkit-transform: translateY(0%) rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: translateY(100%) rotateX(90deg);
+        -webkit-transform-origin: 0 100%;
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-out;
+    }
+}
+
+@-moz-keyframes rotateBottomHide {
+    0% {
+        -moz-transform: translateY(0%) rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: translateY(100%) rotateX(90deg);
+        -moz-transform-origin: 0 100%;
+        opacity: 0;
+        -moz-transition: all 0.3s ease-out;
+    }
+}
+
+@-o-keyframes rotateBottomHide {
+    0% {
+        -o-transform: translateY(0%) rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        -o-transform-style: preserve-3d;
+        -o-transform: translateY(100%) rotateX(90deg);
+        -o-transform-origin: 0 100%;
+        opacity: 0;
+        -o-transition: all 0.3s ease-out;
+    }
+}
+
+@keyframes rotateBottomHide {
+    0% {
+        transform: translateY(0%) rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform-style: preserve-3d;
+        transform: translateY(100%) rotateX(90deg);
+        transform-origin: 0 100%;
+        opacity: 0;
+        transition: all 0.3s ease-out;
+    }
+}
+
+.rotatebottomhide {
+    animation: rotateBottomHide 1s;
+    -moz-animation: rotateBottomHide 1s;
+    -o-animation: rotateBottomHide 1s;
+    -webkit-animation: rotateBottomHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+/* Effect 15:  3D Rotate in from left */
+@-webkit-keyframes rotateLeftShow {
+    0% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: translateZ(100px) translateX(-30%) rotateY(90deg);
+        -webkit-transform-origin: 0 100%;
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -webkit-transform: translateZ(0px) translateX(0%) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes rotateLeftShow {
+    0% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: translateZ(100px) translateX(-30%) rotateY(90deg);
+        -moz-transform-origin: 0 100%;
+        opacity: 0;
+        -moz-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -moz-transform: translateZ(0px) translateX(0%) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes rotateLeftShow {
+    0% {
+        -o-transform-style: preserve-3d;
+        -o-transform: translateZ(100px) translateX(-30%) rotateY(90deg);
+        -o-transform-origin: 0 100%;
+        opacity: 0;
+        -o-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -o-transform: translateZ(0px) translateX(0%) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes rotateLeftShow {
+    0% {
+        transform-style: preserve-3d;
+        transform: translateZ(100px) translateX(-30%) rotateY(90deg);
+        transform-origin: 0 100%;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        transform: translateZ(0px) translateX(0%) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+.rotateleftshow {
+    animation: rotateLeftShow 1s;
+    -moz-animation: rotateLeftShow 1s;
+    -o-animation: rotateLeftShow 1s;
+    -webkit-animation: rotateLeftShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes rotateLeftHide {
+    0% {
+        visibility: visible;
+        -webkit-transform: translateZ(0px) translateX(0%) rotateY(0deg);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform-style: preserve-3d;
+        -webkit-transform: translateZ(100px) translateX(-30%) rotateY(90deg);
+        -webkit-transform-origin: 0 100%;
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+}
+
+@-moz-keyframes rotateLeftHide {
+    0% {
+        visibility: visible;
+        -moz-transform: translateZ(0px) translateX(0%) rotateY(0deg);
+        opacity: 1;
+    }
+    100% {
+        -moz-transform-style: preserve-3d;
+        -moz-transform: translateZ(100px) translateX(-30%) rotateY(90deg);
+        -moz-transform-origin: 0 100%;
+        opacity: 0;
+        -moz-transition: all 0.3s;
+    }
+}
+
+@-o-keyframes rotateLeftHide {
+    0% {
+        visibility: visible;
+        -o-transform: translateZ(0px) translateX(0%) rotateY(0deg);
+        opacity: 1;
+    }
+    100% {
+        -o-transform-style: preserve-3d;
+        -o-transform: translateZ(100px) translateX(-30%) rotateY(90deg);
+        -o-transform-origin: 0 100%;
+        opacity: 0;
+        -o-transition: all 0.3s;
+    }
+}
+
+@keyframes rotateLeftHide {
+    0% {
+        visibility: visible;
+        transform: translateZ(0px) translateX(0%) rotateY(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform-style: preserve-3d;
+        transform: translateZ(100px) translateX(-30%) rotateY(90deg);
+        transform-origin: 0 100%;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+}
+
+.rotatelefthide {
+    animation: rotateLeftHide 1s;
+    -moz-animation: rotateLeftHide 1s;
+    -o-animation: rotateLeftHide 1s;
+    -webkit-animation: rotateLeftHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+/* Effect 16:  Blur */
+@-webkit-keyframes blurShow {
+    0% {
+        -webkit-transform: translateY(-5%);
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -webkit-transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes blurShow {
+    0% {
+        -moz-transform: translateY(-5%);
+        opacity: 0;
+        -moz-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -moz-transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-o-keyframes blurShow {
+    0% {
+        -o-transform: translateY(-5%);
+        opacity: 0;
+        -o-transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        -o-transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes blurShow {
+    0% {
+        transform: translateY(-5%);
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    100% {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.blurshow {
+    animation: blurShow 1s;
+    -moz-animation: blurShow 1s;
+    -o-animation: blurShow 1s;
+    -webkit-animation: blurShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+@-webkit-keyframes blurHide {
+    0% {
+        visibility: visible;
+        -webkit-transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(-5%);
+        opacity: 0;
+        -webkit-transition: all 0.3s;
+    }
+}
+
+@-moz-keyframes blurHide {
+    0% {
+        visibility: visible;
+        -moz-transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        -moz-transform: translateY(-5%);
+        opacity: 0;
+        -moz-transition: all 0.3s;
+    }
+}
+
+@-o-keyframes blurHide {
+    0% {
+        visibility: visible;
+        -o-transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        -o-transform: translateY(-5%);
+        opacity: 0;
+        -o-transition: all 0.3s;
+    }
+}
+
+@keyframes blurHide {
+    0% {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-5%);
+        opacity: 0;
+        transition: all 0.3s;
+    }
+}
+
+.blurhide {
+    animation: blurHide 1s;
+    -moz-animation: blurHide 1s;
+    -o-animation: blurHide 1s;
+    -webkit-animation: blurHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+.md-effect-16 {
+    -webkit-transform: translateY(-5%);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+}
+
+.show-md-effect-16 {
+    visibility: visible;
+    -webkit-transform: translateY(0);
+    opacity: 1;
+}
+
+/* Effect 17:  Slide in from bottom with perspective on container */
+@-webkit-keyframes letInShow {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(200%);
+    }
+    100% {
+        visibility: visible;
+        -webkit-transform: translateY(0);
+        opacity: 1;
+        -webkit-transition: all 0.3s 0.2s;
+    }
+}
+
+@-moz-keyframes letInShow {
+    0% {
+        opacity: 0;
+        -moz-transform: translateY(200%);
+    }
+    100% {
+        visibility: visible;
+        -moz-transform: translateY(0);
+        opacity: 1;
+        -moz-transition: all 0.3s 0.2s;
+    }
+}
+
+@-o-keyframes letInShow {
+    0% {
+        opacity: 0;
+        -o-transform: translateY(200%);
+    }
+    100% {
+        visibility: visible;
+        -o-transform: translateY(0);
+        opacity: 1;
+        -o-transition: all 0.3s 0.2s;
+    }
+}
+
+@keyframes letInShow {
+    0% {
+        opacity: 0;
+        transform: translateY(200%);
+    }
+    100% {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+        transition: all 0.3s 0.2s;
+    }
+}
+
+.letinshow {
+    animation: letInShow 1s;
+    -moz-animation: letInShow 1s;
+    -o-animation: letInShow 1s;
+    -webkit-animation: letInShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes letInHide {
+    0% {
+        visibility: visible;
+        -webkit-transform: translateY(0);
+        opacity: 1;
+        -webkit-transition: all 0.3s 0.2s;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(200%);
+    }
+}
+
+@-moz-keyframes letInHide {
+    0% {
+        visibility: visible;
+        -moz-transform: translateY(0);
+        opacity: 1;
+        -moz-transition: all 0.3s 0.2s;
+    }
+    100% {
+        opacity: 0;
+        -moz-transform: translateY(200%);
+    }
+}
+
+@-o-keyframes letInHide {
+    0% {
+        visibility: visible;
+        -o-transform: translateY(0);
+        opacity: 1;
+        -o-transition: all 0.3s 0.2s;
+    }
+    100% {
+        opacity: 0;
+        -o-transform: translateY(200%);
+    }
+}
+
+@keyframes letInHide {
+    0% {
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+        transition: all 0.3s 0.2s;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(200%);
+    }
+}
+
+.letinhide {
+    animation: letInHide 1s;
+    -moz-animation: letInHide 1s;
+    -o-animation: letInHide 1s;
+    -webkit-animation: letInHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+
+.md-effect-17 {
+    opacity: 0;
+    -webkit-transform: translateY(200%);
+}
+
+.show-md-effect-17 {
+    visibility: visible;
+    -webkit-transform: translateY(0);
+    opacity: 1;
+    -webkit-transition: all 0.3s 0.2s;
+}
+
+/* Effect 18:  Slide from right with perspective on container */
+@-webkit-keyframes makeWayShow {
+    0% {
+        -webkit-transform: translateX(200%);
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -webkit-transform: translateX(0);
+        opacity: 1;
+        -webkit-transition: all 0.5s 0.1s;
+    }
+}
+
+@-moz-keyframes makeWayShow {
+    0% {
+        -moz-transform: translateX(200%);
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -moz-transform: translateX(0);
+        opacity: 1;
+        -moz-transition: all 0.5s 0.1s;
+    }
+}
+
+@-o-keyframes makeWayShow {
+    0% {
+        -o-transform: translateX(200%);
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        -o-transform: translateX(0);
+        opacity: 1;
+        -o-transition: all 0.5s 0.1s;
+    }
+}
+
+@keyframes makeWayShow {
+    0% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.5s 0.1s;
+    }
+}
+
+.makewayshow {
+    animation: makeWayShow 1s;
+    -moz-animation: makeWayShow 1s;
+    -o-animation: makeWayShow 1s;
+    -webkit-animation: makeWayShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes makeWayHide {
+    0% {
+        visibility: visible;
+        -webkit-transform: translateX(0);
+        opacity: 1;
+        -webkit-transition: all 0.5s 0.1s;
+    }
+    100% {
+        -webkit-transform: translateX(200%);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes makeWayHide {
+    0% {
+        visibility: visible;
+        -moz-transform: translateX(0);
+        opacity: 1;
+        -moz-transition: all 0.5s 0.1s;
+    }
+    100% {
+        -moz-transform: translateX(200%);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes makeWayHide {
+    0% {
+        visibility: visible;
+        -o-transform: translateX(0);
+        opacity: 1;
+        -o-transition: all 0.5s 0.1s;
+    }
+    100% {
+        -o-transform: translateX(200%);
+        opacity: 0;
+    }
+}
+
+@keyframes makeWayHide {
+    0% {
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.5s 0.1s;
+    }
+    100% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+}
+
+.makewayhide {
+    animation: makeWayHide 1s;
+    -moz-animation: makeWayHide 1s;
+    -o-animation: makeWayHide 1s;
+    -webkit-animation: makeWayHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+.md-effect-18 {
+    -webkit-transform: translateX(200%);
+    opacity: 0;
+}
+
+.show-md-effect-18 {
+    visibility: visible;
+    -webkit-transform: translateX(0);
+    opacity: 1;
+    -webkit-transition: all 0.5s 0.1s;
+}
+
+/* Effect 19:  Slip in from the top with perspective on container */
+@-webkit-keyframes slipTopShow {
+    0% {
+        -webkit-transform: translateY(-200%);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        opacity: 1;
+        -webkit-transition: all 0.5s 0.1s;
+    }
+}
+
+@-moz-keyframes slipTopShow {
+    0% {
+        -moz-transform: translateY(-200%);
+        opacity: 0;
+    }
+    100% {
+        -moz-transform: translateY(0);
+        opacity: 1;
+        -moz-transition: all 0.5s 0.1s;
+    }
+}
+
+@-o-keyframes slipTopShow {
+    0% {
+        -o-transform: translateY(-200%);
+        opacity: 0;
+    }
+    100% {
+        -o-transform: translateY(0);
+        opacity: 1;
+        -o-transition: all 0.5s 0.1s;
+    }
+}
+
+@keyframes slipTopShow {
+    0% {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        transition: all 0.5s 0.1s;
+    }
+}
+
+.sliptopshow {
+    animation: slipTopShow 1s;
+    -moz-animation: slipTopShow 1s;
+    -o-animation: slipTopShow 1s;
+    -webkit-animation: slipTopShow 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+@-webkit-keyframes slipTopHide {
+    0% {
+        -webkit-transform: translateY(0);
+        opacity: 1;
+        -webkit-transition: all 0.5s 0.1s;
+    }
+    100% {
+        -webkit-transform: translateY(-200%);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes slipTopHide {
+    0% {
+        -moz-transform: translateY(0);
+        opacity: 1;
+        -moz-transition: all 0.5s 0.1s;
+    }
+    100% {
+        -moz-transform: translateY(-200%);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes slipTopHide {
+    0% {
+        -o-transform: translateY(0);
+        opacity: 1;
+        -o-transition: all 0.5s 0.1s;
+    }
+    100% {
+        -o-transform: translateY(-200%);
+        opacity: 0;
+    }
+}
+
+@keyframes slipTopHide {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+        transition: all 0.5s 0.1s;
+    }
+    100% {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+}
+
+.sliptophide {
+    animation: slipTopHide 1s;
+    -moz-animation: slipTopHide 1s;
+    -o-animation: slipTopHide 1s;
+    -webkit-animation: slipTopHide 1s;
+    /*动画属性名，也就是我们前面keyframes定义的动画名*/
+}
+
+.md-effect-19 {
+    -webkit-transform: translateY(-200%);
+    opacity: 0;
+}
+
+.show-md-effect-19 {
+    -webkit-transform: translateY(0);
+    opacity: 1;
+    -webkit-transition: all 0.5s 0.1s;
+}

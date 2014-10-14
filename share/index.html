@@ -1,0 +1,16 @@
+---
+layout: default
+title: 知识分享
+slug: share
+lead: 一个人知识,不如与他人分享,共同进步
+---
+
+{% include shared/share1.md %}
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{site.baseurl}}/{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

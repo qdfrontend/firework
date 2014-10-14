@@ -1,0 +1,30 @@
+<div class="bs-docs-section">
+	<h1 id="buttons" class="page-header">按钮 <small>button.js</small></h1>
+
+	<h2 id="buttons-examples">基本描述</h2>
+	<p>该模块的用处是....</p>
+
+	<h4>显示状态</h4>
+	<p>添加代码 <code>data-loading-text="Loading..."</code> 可以显示为一个正在loading状态的按钮.</p>
+	<div class="bs-example" style="padding-bottom: 24px;">
+		<button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary">
+			Loading state
+		</button>
+	</div><!-- /example -->
+
+{% highlight html %}
+<button type="button" id="loading-example-btn" data-loading-text="Loading..." class="btn btn-primary">
+  Loading state
+</button>
+<script>
+  $('#loading-example-btn').click(function () {
+	var btn = $(this)
+	btn.button('loading')
+	$.ajax(...).always(function () {
+	  btn.button('reset')
+	});
+  });
+</script>
+{% endhighlight %}
+
+</div>

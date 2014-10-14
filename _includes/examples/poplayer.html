@@ -1,0 +1,96 @@
+ <div class="bs-docs-section">
+	<h1 id="poplayer" class="page-header">弹出层 <small><a target="_blank" href="{{ site.baseurl }}/apis/poplayer/">详细文档</a></small></h1>
+
+	<h2 id="poplayer-examples">弹出层效果，可使用回调函数，或者事件监听</h2>
+	<p>可用defaultStyle类型参数:</p>
+	<pre>
+"fadinscale"（默认是它）,
+"slideinright",
+"slidbottom",
+"newspaper",
+"fall",
+"sidefall",
+"stickup",
+"fliphorizontal",
+"flipvertical",
+"sign",
+"superscaled",
+"justme",
+"slit",
+"rotatebottom",
+"rotateleft",
+"blur",
+"letin",
+"makeway"
+"sliptop"
+	</pre>
+
+<h4 id="poplayer-hideorshow">显示与隐藏</h4>
+<p>找到对应的元素进行初始化，并调用显示或隐藏方法。</p>
+<div class="bs-example" style="padding-bottom: 24px;">
+	<div id="poplayer-demo" class="md-modal"></div>
+	<button id="poplayer-show"  class="md-close">显示</button>
+	<button id="poplayer-hide" class="md-close">隐藏</button>
+</div><!-- /example -->
+
+{% highlight html %}
+<!-- 要弹出的层 -->
+<div id="poplayer-demo" class="md-modal"></div>
+
+<script>
+//控件初始化
+$("#poplayer-demo").poplayer({defaultStyle:"newspaper"});
+
+$("#poplayer-show").click(function(){
+	//调用显示方法，并传入defaultStyle显示方式
+	$("#poplayer-demo").poplayer("show","newspaper"); 
+});
+$("#poplayer-hide").click(function(){
+	//隐藏方式在显示的时候就设置好了，不需要传入defaultStyle值。
+	//调用隐藏方法。
+	$("#poplayer-demo").poplayer("hide"); 
+});
+</script>
+{% endhighlight %}
+
+<h4 id="poplayer-callback" >回调与事件监听</h4>
+<p>添加事件监听方法与回调。</p>
+<div class="bs-example" style="padding-bottom: 24px;">
+	<div id="poplayer-demo2" class="md-modal"></div>
+	<button id="poplayer-show2"  class="md-close">显示</button>
+	<button id="poplayer-hide2" class="md-close">隐藏</button>
+</div><!-- /example -->
+
+{% highlight html %}
+<!-- 要弹出的层 -->
+<div id="poplayer-demo2" class="md-modal"></div>
+
+<script>
+//控件初始化
+$("#poplayer-demo2").poplayer({
+	showAnimateEnd:function(){
+		alert("显示");
+	}/*,
+ 	hideAnimateEnd:function(){
+		alert("隐藏");
+	} */
+});
+// 监控一个事件要使用如下规则
+// 控件名称+事件名字  
+// 注意 要全部小写 例如poplayer +hideAnimateEnd  == poplayerhideanimateend
+$("#poplayer-demo2").on("poplayerhideanimateend",function(){
+	alert("隐藏");
+});
+
+$("#poplayer-show2").click(function(){
+	//调用显示方法，并传入defaultStyle显示方式
+	$("#poplayer-demo2").poplayer("show"); 
+});
+$("#poplayer-hide2").click(function(){
+	//隐藏方式在显示的时候就设置好了，不需要传入defaultStyle值。
+	//调用隐藏方法。
+	$("#poplayer-demo2").poplayer("hide"); 
+});
+{% endhighlight %}
+
+</div>

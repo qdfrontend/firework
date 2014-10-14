@@ -1,0 +1,38 @@
+# Dependencies
+markdown:         kramdown
+markdown_ext:     markdown,mkd,mkdn,md
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# relative
+relative_permalinks: false
+
+# Server
+encoding:         utf-8
+plugins:         ./_plugins
+safe:             false
+host:             127.0.0.1
+port:             9001
+baseurl:          /firework
+url:              http://qdfrontend.github.io/firework/
+encoding:         UTF-8
+
+# Custom vars
+current_version:  0.0.1
+repo:             https://github.com/twbs/bootstrap
+sass_repo:        https://github.com/twbs/bootstrap-sass
+
+download:
+  source:         https://github.com/twbs/bootstrap/archive/v3.2.0.zip
+  dist:           https://github.com/twbs/bootstrap/releases/download/v3.2.0/bootstrap-3.2.0-dist.zip
+  sass:           https://github.com/twbs/bootstrap-sass/archive/v3.2.0.tar.gz
+
+build:            http://www.layoutit.com/build
+mailto:           mailto:qdfrontend@gmail.com?subject=FireWork相关
+
+cdn:
+  css:            //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
+  css_theme:      //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css
+  js:             //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js

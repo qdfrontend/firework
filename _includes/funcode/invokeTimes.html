@@ -1,0 +1,22 @@
+<div id="invokeTimes" >
+{% highlight js %}
+/**
+ * 记录函数调用的次数
+ */
+function invokeTimes(){
+
+    if(arguments.callee.times == undefined)
+    {
+        arguments.callee.times = 0;
+    }
+    arguments.callee.times ++;
+    
+    console.log(arguments.callee.times);
+    
+}
+document.body.onclick = function(){
+    
+    invokeTimes();
+}
+{% endhighlight %}
+</div>

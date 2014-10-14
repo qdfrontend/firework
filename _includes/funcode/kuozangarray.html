@@ -1,0 +1,54 @@
+<div id="kuozangarray">
+{% highlight js %}
+//计算数组中的最大值
+Array.prototype.max = function(){
+ return Math.max.apply({},this)
+}
+
+//计算数组中的最小值
+Array.prototype.min = function(){
+ return Math.min.apply({},this)
+}
+
+//复制数组
+Array.prototype.copy =
+  function() {
+    return [].concat(this);
+};
+
+//去除数组中只指定元素，只能去除一个，如果想多个，之前先用unique处理
+Array.prototype.remove = function(value){
+    for(var i=0,len=this.length;i<len;i++)
+    {
+        if(this[i]==value){
+            this.splice(i, 1);
+            break;
+        }
+    }
+    
+    return this;
+}
+
+//去除数组中只指定元素，只能去除一个，如果想多个，之前先用unique处理
+Array.prototype.inArray = function(value){
+    var index = -1;
+    each(this,function(v,k){
+        if(v == value){
+            index = k;
+            return false;
+        }
+    })
+
+    return index;
+}
+
+//去除数组中的重复元素
+Array.prototype.unique = function(){
+    var rst = [];
+    each(this, function(v,k){
+        if(rst.inArray(v)<0) rst.push(v);
+    })
+    return rst;
+}
+{% endhighlight %}
+</div>

@@ -1,0 +1,162 @@
+
+<div id="development_css">
+<h1>命名规范</h1>
+<h2>文件命名规范</h2>
+<p>	通用的CSS放在如下目录中（并按如下进行命名）： 
+通用重置样式库： /css/reset.css
+通用UI元素样式库：/css/basic.css
+JS组件相关样式库：/css/js/xxx.js
+	业务类的CSS放在如下目录中（并按如下进行命名）：
+个性化元素样式库 /css/style.css
+	所有的IMGE,统一放在如下目录（并按如下进行命名）：
+ /images/xx.jpg</p>
+<h2>CLASS的命名规范</h2>
+<p>	所有的命名最好都由小写字母、数字、中划线组成。
+	尽量使用英文命名原则。
+	命名尽量不缩写，除非一看就明白的单词。</p>
+<h2>常用CSS命名：</h2>
+<p>可以参考以下进行命名：
+(1) 页面结构 </p>
+<p>•	容器: container
+•	页头：header
+•	内容：content/container
+•	页面主体：main
+•	页尾：footer
+•	导航：nav
+•	侧栏：sidebar
+•	栏目：column
+•	页面外围控制整体布局宽度：wrapper
+•	左右中：left right center</p>
+<p>(2) 导航 </p>
+<p>•	导航：nav
+•	主导航：mainbav
+•	子导航：subnav
+•	顶导航：topnav
+•	边导航：sidebar
+•	左导航：leftsidebar
+•	右导航：rightsidebar
+•	菜单：menu
+•	子菜单：submenu
+•	标题: title
+•	摘要: summary</p>
+<p>(3) 功能 </p>
+<p>•	标志：logo
+•	广告：banner
+•	登陆：login
+•	登录条：loginbar
+•	注册：regsiter
+•	搜索：search
+•	功能区：shop
+•	标题：title
+•	加入：joinus
+•	状态：status
+•	按钮：btn
+•	滚动：scroll
+•	标签页：tab
+•	文章列表：list
+•	提示信息：msg
+•	当前的: current
+•	小技巧：tips
+•	图标: icon
+•	注释：note
+•	指南：guild
+•	服务：service
+•	热点：hot
+•	新闻：news
+•	下载：download
+•	投票：vote
+•	合作伙伴：partner
+•	友情链接：link
+•	版权：copyright</p>
+<h2>CSS书写规范</h2>
+<h2>排版规范</h2>
+<p>(1) 建议写成多行这样可读性比较高（整个文件内的规则排版必须统一；） </p>
+<h2>属性编写顺序 （推荐）</h2>
+<p>1)	显示属性：display/list-style/position/float/clear …</p>
+<p>2)	自身属性（盒模型）：width/height/margin/padding/border</p>
+<p>3)	背景：background</p>
+<p>4)	行高：line-height</p>
+<p>5)	文本属性：</p>
+<p>color/font/text-decoration/text-align/text-indent/vertical-align/white-space/content…</p>
+<p>6)	其他：cursor/z-index/zoom/overflow</p>
+<h2>CSS3属性：</h2>
+<p>transform/transition/animation/box-shadow/border-radius</p>
+<p>如果使用CSS3的属性，如果有必要加入浏览器前缀，则按照 -webkit- / -moz- / -ms- / -o- / std的顺序进行添加，标准属性写在最后。</p>
+<p>链接的样式请严格按照如下顺序添加： a:link -&gt; a:visited -&gt; a:hover -&gt; a:active</p>
+<h2>代码缩写：</h2>
+<p>下面是CSS缩写性质的列表以及它们所表示的常规性质。</p>
+<p>Background（背景）：背景附件、背景颜色、背景图像、背景位置、背景重复 </p>
+<p>Border（边框）：边框颜色、边框风格、边框宽度 </p>
+<p>border-bottom（底部边框）：底部边框颜色、底部边框样式、底部边框宽度 </p>
+<p>border-left（左侧边框）：左侧边框颜色、左侧边框样式、左侧边框宽度 </p>
+<p>border-right（右侧边框）：右侧边框颜色、右侧边框样式、右侧边框宽度 </p>
+<p>border-top（顶部边框）：顶部边框颜色、顶部边框样式、顶部边框宽度 </p>
+<p>cue（声音提示）：前提示、后提示 </p>
+<p>font（字体）：字体、字号、字体样式、字体粗细、字体变体、线高度、字体大小调整、字体拉伸 </p>
+<p>list-style（列表样式）：列表样式图像、列表样式位置、列表样式类型 </p>
+<p>margin（空白）：顶部空白、右侧空白、底部空白、左侧空白 </p>
+<p>outline（大纲）：大纲颜色、大纲样式、大纲宽度 </p>
+<p>padding（间隙）：顶部间隙、右侧间隙、底部间隙、左侧间隙 </p>
+<p>pause（暂停）：后暂停、前暂停</p>
+<p>三 注释规范</p>
+<h2>文件顶部注释（推荐使用）</h2>
+<h3>Css代码 示例</h3>
+<ol>
+<li>/*  </li>
+<li>* @description: 文件用途 </li>
+<li></li>
+<li>* @author: wangjiao</li>
+<li></li>
+<li>* @update: wangjiao (2014-04-13 18:32)  </li>
+<li></li>
+<li>*/  </li>
+</ol>
+<h3>模块注释</h3>
+<p>模块注释必须单独写在一行 </p>
+<h3>Css代码 示例</h3>
+<ol>
+<li>/* module: module1 by 张三 */  </li>
+<li>…  </li>
+<li>/* module: module2 by 张三 */  </li>
+</ol>
+<h3>单行注释与多行注释</h3>
+<p>单行注释Css代码 示例</p>
+<ol>
+<li>/* this is a short comment */  </li>
+</ol>
+<p>多行注释必须写在单独行内 </p>
+<h2>多行注释Css代码 示例</h2>
+<ol>
+<li>/*  </li>
+<li>* this is comment line 1.  </li>
+<li></li>
+<li>* this is comment line 2.  </li>
+<li>*/  </li>
+</ol>
+<h2>特殊注释</h2>
+<p>用于标注修改、待办等信息
+1.	/* TODO: xxxx by name 2013-04-13 18:32 <em>/<br />
+2.	
+2.	/</em> BUGFIX: xxxx by name 2012-04-13 18:32 */  </p>
+<h2>区块注释</h2>
+<p>对一个代码区块注释（可选），将样式语句分区块并在新行中对其注释。 </p>
+<p>Css代码 </p>
+<ol>
+<li>/* 导航 */  </li>
+<li>/* 页脚 */  </li>
+<li>/* 菜单 */  </li>
+</ol>
+<h1>浏览器兼容性规范</h1>
+<h2>字体规则</h2>
+<p>•	为了防止文件合并及编码转换时造成问题，建议将样式中文字体名字改成对应的英文名字，如：黑体(SimHei) 宋体(SimSun) 微软雅黑 (Microsoft Yahei，几个单词中间有空格组成的必须加引号)</p>
+<p>•	字体粗细采用具体数值，粗体bold写为700，正常normal写为400</p>
+<p>•	font-size必须以px或pt为单位，推荐用px（注：pt为打印版字体大小设置），不允许使用xx-small/x-small/small/medium/large/x-large/xx-large等值</p>
+<p>•	为了对font-family取值进行统一，更好的支持各个操作系统上各个浏览器的兼容性，font-family不允许在业务代码中随意设置</p>
+<h1>测试规范</h1>
+<h2>了解浏览器特效支持</h2>
+<p>为了页面性能考虑，如果浏览器不支持CSS3相关属性的，则该浏览器的某些特效将不再支持，属性的支持情况如下表所示（Y为支持，N为不支持）： </p>
+<h2>设定浏览器支持标准</h2>
+<p>•	A级－交互和视觉完全符全设计的要求。
+•	B级－视觉上允许有所差异，但不破坏页面的整体效果。
+•	C级－可忽略设计上的细节，但不防碍使用。</p>
+</div>
