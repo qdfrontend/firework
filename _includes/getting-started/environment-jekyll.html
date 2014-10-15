@@ -1,0 +1,177 @@
+<h1 id="installjekyllevri">搭建jekyll运行环境</h1>
+<h1 id="installRuby_RubyDevKit">1.安装配置Ruby和Ruby DevKit</h1>
+<p><strong>(1).首先进入<a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a></strong></p>
+<p><strong>(2).选择下载适配你系统的Ruby，安装</strong></p>
+<p><img src="{{site.baseurl}}/images/pic1.png" alt="image" /></p>
+<p><img src="{{site.baseurl}}/images/pic2.png" alt="image" /></p>
+<p><strong>(3)选择下载适配你系统的Ruby DevKit</strong></p>
+<p><img src="{{site.baseurl}}/images/pic3.png" alt="image" /></p>
+<p>下载完成：</p>
+<p>下载的是一个自解压文档，执行时会询问解压路径，建议比较简单的如C:\RubyDevKit\。
+<font style="color:red">要注意路径无空格！</font></p>
+<p><strong>(4)接下来，你需要初始化DEVKIT并将其绑定到你的Ruby安装，打开命令行工具。</strong></p>
+<p>先导航到你解压的路径，输入：</p>
+<pre><code>     CD C：\ RubyDevKit
+</code></pre>
+
+<p>自动检测Ruby安装，并将它们添加到配置文件中的下一个步骤：</p>
+<pre><code>     ruby dk.rb init
+</code></pre>
+
+<p>安装DEVKIT，它绑定到你的Ruby安装：</p>
+<pre><code>     ruby dk.rb install
+</code></pre>
+
+<p>安装时出错，解决办法：打开你的安装路径如，C:\RubyDevKit，下的config.yml文件，</p>
+<p>修改配置，改为你的安装的的ruby的路径（<font style="color:red">要注意必须输入两次</font>）：</p>
+<p><img src="{{site.baseurl}}/images/pic4.png" alt="image" /></p>
+<h1 id="installjekyll">2.安装jekyll</h1>
+<p><strong>(1).继续刚才的命令行，输入：</strong></p>
+<pre><code>     gem install jekyll
+</code></pre>
+
+<p><strong>这个过程会出现各种错误：</strong></p>
+<p><strong>问题1：下载认证文件</strong></p>
+<blockquote>
+<p><strong>安装jekll错误</strong></p>
+<p>~ C:\Ruby21-x64&gt;gem install jekyllERROR:  Could not find a valid gem 'jekyll' (&gt;= 0), here is why:          Unable to download data from https://rubygems.org/ - SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed (https://rubygems.global.ssl.fastly.net/quick/Marshal.4.8/jekyll-1.3.0.gemspec.rz)ERROR:  Possible alternatives: jekyll</p>
+</blockquote>
+<pre><code>      url http://curl.haxx.se/ca/cacert.pem 
+</code></pre>
+
+<blockquote>
+<p>-o cacert.pem  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current                                 Dload  Upload   Total   Spent    Left  Speed100  223k  100  223k    0     0  82478      0  0:00:02  0:00:02 --:--:-- 94724</p>
+</blockquote>
+<p><font style="color:green">
+&nbsp;&nbsp;&nbsp;&nbsp;这里又会出现一个问题：就是curl指令不是外部或内部命令，解决办法：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;下载<a href="http://up.2cto.com/2012/0511/20120511021531412.zip">http://up.2cto.com/2012/0511/20120511021531412.zip</a>，</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;解压后打开运行curl.exe，然后将curl.exe移动到C:\Windows\System32下，添加curl指令
+</font></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;移动到Ruby安装目录（手动移动也可）</p>
+<pre><code>            C:\Ruby21-x64&gt;mv cacert.pem  C:\Ruby21-x64\bin
+</code></pre>
+
+<p><strong>设置环境变量</strong></p>
+<p><img src="{{site.baseurl}}/images/pic5.png" alt="image" /></p>
+<p><strong>新打开一个命令行，再安装jekll</strong>     
+</p>
+<pre><code>            gem install jekyll
+</code></pre>
+
+<p><font style="color:red">
+**********************************************************解决************************************************************
+</font></p>
+<blockquote>
+<p>~ D:\workspace\ruby&gt;gem install jekyllERROR:  Error installing jekyll:        The 'fast-stemmer' native gem requires installed build tools.Please update your PATH to include build tools or download the DevKitfrom 'http://rubyinstaller.org/downloads' and follow the instructionsat 'http://github.com/oneclick/rubyinstaller/wiki/Development-Kit'</p>
+</blockquote>
+<p><strong>问题2：安装Devkit</strong></p>
+<p>下载DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe：http://rubyinstaller.org/downloads/</p>
+<p>解压到目录：D:\toolkit\devkit</p>
+<p>运行msys.bat，打开ruby命令行，再安装jekll</p>
+<p><font style="color:red">
+**********************************************************解决************************************************************
+</font></p>
+<p><strong>问题3：网络限制</strong></p>
+<blockquote>
+<p>Unable to download data from https://rubygems.org/ Errno::ETIMEDOUT:
+ A connection attempt failed because the connected party did not properly respon
+d after a period of time, or established connection failed because connected hos
+t has failed to respond. - connect(2) (https://rubygems.org/latest_specs.4.8.gz)</p>
+</blockquote>
+<p>按顺序执行下列代码：</p>
+<pre><code>            gem sources --remove https://rubygems.org/
+
+            gem sources -a https://ruby.taobao.org/
+
+            gem sources -l
+</code></pre>
+
+<blockquote>
+<p>*** CURRENT SOURCES ***</p>
+<p>https://ruby.taobao.org</p>
+</blockquote>
+<p><font style="color:red">请确保只有 ruby.taobao.org</font></p>
+<pre><code>            gem install rails
+</code></pre>
+
+<p><font style="color:red">
+**********************************************************解决************************************************************
+</font></p>
+<h1>3.安装配置代码高亮显示</h1>
+<p id="installPython">安装 Python</p>
+<p>前往 <a href="http://www.python.org/download/">http://www.python.org/download/</a>，下载合适的 Python windows 安装包，如 Python 2.7.6 Windows Installer。 </p>
+<p><font style="color:red">请注意，Python 2 可能会更合适，因为暂时 Python 3 可能不会正常工作。</font></p>
+<p>安装</p>
+<p>①<strong>添加安装路径 (如： C:\Python27) 至 PATH。</strong>
+<font style="color:green"></p>
+<p>如何操作?</p>
+<p>按住 Win 键再按下 Pause</p>
+<p>点击 Advanced System Settings</p>
+<p>点击 Environment Variables</p>
+<p>将 ;C:\python27 添加至 Path 变量的末尾</p>
+<p>重启命令行
+</font></p>
+<p>②<strong>检验 Python 安装是否成功</strong></p>
+<pre><code>    python -V
+</code></pre>
+
+<p>输出示例：</p>
+<blockquote>
+<p>Python 2.7.6</p>
+</blockquote>
+<p>③<strong>安装 ‘Easy Install’</strong></p>
+<p>浏览<a href="https://pypi.python.org/pypi/setuptools#installation-instructions"> https://pypi.python.org/pypi/setuptools#installation-instructions</a> 来查看详细的安装指南。
+对于 Windows 7 的机器，下载 ez_setup.py 并保存，例如，至C:\。 然后从命令行使用 Python 运行此文件：</p>
+<pre><code>   python “C:\ez_setup.py”
+</code></pre>
+
+<p>添加 ‘Python Scripts’ 路径 (如： C:\Python27\Scripts) 至 PATH</p>
+<p>④<strong>安装 Pygments</strong></p>
+<p>确保 easy_install 已经正确安装</p>
+<pre><code>   easy_install --version
+</code></pre>
+
+<p>输出示例：</p>
+<blockquote>
+<p>setuptools 3.1</p>
+</blockquote>
+<p>使用 “easy_install” 来安装 Pygments</p>
+<pre><code>   easy_install Pygments
+</code></pre>
+
+<h1 id="runjekyll">4.运行jekyll</h1>
+<p><strong>(1).设置编码选项</strong></p>
+<p><strong>在<font style="color:blue">&quot;_config.yml&quot;</font>文件中配置</strong></p>
+<pre><code> encoding: utf-8
+</code></pre>
+
+<p><strong>你也可以通过每次打开一个新的控制台窗口运行以下命令更改命令行工具的编码为UTF-8</strong></p>
+<pre><code> CHCP 65001
+</code></pre>
+
+<p><strong>(2).使用子文件夹</strong></p>
+<p><strong>jekyll无法在windows上建立或提供某些系统保留文件夹，比如说你的用户文件夹。相反，它会输出一个就像这样的错误：</strong></p>
+<blockquote>
+<p>C:\Users\You&gt;jekyll serve</p>
+<p>Configuration file: C:\Users\You_config.yml</p>
+<p>Source: C:\Users\You</p>
+<p>Destination: C:\Users\You_site</p>
+<p>Generating...</p>
+<p>jekyll 2.4.0 | Error: Permission denied - .</p>
+</blockquote>
+<p><strong>如果遇到这种错误，将你的站点移动到一个子目录下比如，&quot;C:\Users\You\awesome-jekyll-site&quot;,并重试。</strong></p>
+<p><strong>最后</strong></p>
+<pre><code>       jekyll build
+
+       jekyll build --watch
+
+       jekyll build -w
+
+       jekyll serve
+
+       jekyll serve --watch
+
+       jekyll serve -w
+</code></pre>
+
+<p>现在，在您的Windows计算机上运行的所有上述命令。恭喜您！您已成功在Windows上建立jekyll了。</p>
