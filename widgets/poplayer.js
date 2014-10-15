@@ -75,13 +75,13 @@ $.widget("firework.poplayer", {
 		style = this.style;
 		
 		if(style&&element.is(":hidden")){
-			element.one(animationend,$.proxy(this.triggerShowAnimateEnd,me));
+			element.one(animationend,$.proxy(this._triggerShowAnimateEnd,me));
 			element.removeClass(style+"hide")
 				   .addClass(style+"show")
 				   .css("display","block");
 		}else{
 			element.show();
-			this.triggerShowAnimateEnd();
+			this._triggerShowAnimateEnd();
 		}
 	},
 	/**
@@ -95,12 +95,12 @@ $.widget("firework.poplayer", {
 			style = me.style;
 
 		if(style&&element.is(":visible")){
-			element.one(animationend,$.proxy(this.triggerHideAnimateEnd,me));
+			element.one(animationend,$.proxy(this._triggerHideAnimateEnd,me));
 			element.removeClass(style+"show")
 				   .addClass(style+"hide");
 		}else {
 			element.hide();
-			this.triggerHideAnimateEnd();
+			this._triggerHideAnimateEnd();
 		}  
 	},
 	/**
