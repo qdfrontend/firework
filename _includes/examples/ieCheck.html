@@ -1,15 +1,15 @@
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/ieCheck.css" />	
+<div class="bs-docs-section">
+   <h1 id="ieCheck" class="page-header">IE版本提示<small><a target="_blank" href="{{ site.baseurl }}/apis/ieCheck/">详细文档</a></small></h1>
 
- <div class="bs-docs-section">
-	<h1 id="ieCheck" class="page-header">IE版本提示<small><a target="_blank" href="{{ site.baseurl }}/apis/ieCheck/">详细文档</a></small></h1>
+   <p>应用不支持低版本浏览器时，给出友好提示。</p>
 
-	<p>页面初始化时调用。会自动判断并提示</p>
-	
+  <div class="bs-callout bs-callout-warning" id="callout-stacked-modals">
+    <h4>使用低版本IE浏览器测试</h4>
+    <p>支持版本控制。</p>
+  </div>
+
 {% highlight js %}
 //控件初始化自动运行
-$(function(){
-	$("body").ieCheck();
-});
+$("body").ieCheck();
 {% endhighlight %}
-
 </div>

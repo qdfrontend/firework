@@ -1,9 +1,58 @@
- <div class="bs-docs-section">
-	<h1 id="poplayer" class="page-header">弹出层 <small><a target="_blank" href="{{ site.baseurl }}/apis/poplayer/">详细文档</a></small></h1>
+<div class="bs-docs-section">
+  <h1 id="poplayer" class="page-header">弹出层<small><a target="_blank" href="{{ site.baseurl }}/apis/poplayer/">详细文档</a></small></h1>
 
-	<h2 id="poplayer-examples">弹出层效果，可使用回调函数，或者事件监听</h2>
-	<p>可用defaultStyle类型参数:</p>
-	<pre>
+  <h2 id="poplayer-intro">示例</h2>
+  <p>具有多个弹出效果，支持回调，事件监听。</p>
+
+  <div class="bs-callout bs-callout-warning" id="callout-stacked-modals">
+    <h4>使用前一定要初始化</h4>
+    <p>目前功能比较单一，不够完善，使用前一定先要初始化一下。</p>
+  </div>
+
+  <h2 id="poplayer-showorhide">显示与隐藏</h2>
+  <p>找到对应的元素进行初始化，并调用显示或隐藏方法。</p>
+  <div class="bs-example bs-example-modal">
+	<div id="poplayer-demo" class="md-modal"></div>
+	<button id="poplayer-show"  class="md-close">显示</button>
+	<button id="poplayer-hide" class="md-close">隐藏</button>
+  </div><!-- /example -->
+{% highlight html %}
+<!-- 要弹出的层 -->
+<div id="poplayer-demo" class="md-modal"></div>
+
+//控件初始化
+$("#poplayer-demo").poplayer();
+
+$("#poplayer-show").click(function(){
+	//调用显示方法，并传入defaultStyle显示方式
+	$("#poplayer-demo").poplayer("show"); 
+});
+$("#poplayer-hide").click(function(){
+	//隐藏方式在显示的时候就设置好了，不需要传入defaultStyle值。
+	//调用隐藏方法。
+	$("#poplayer-demo").poplayer("hide"); 
+});
+{% endhighlight %}
+
+  <h2 id="poplayer-param">参数</h2>
+  
+  <h3 id="poplayer-defaultStyle">设置弹出方式</h3>
+  <p>通过设置<code>defaultStyle</code>选项值可改变弹出方式。或初始化时指定默认方式</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 100px;">名称</th>
+         <th style="width: 50px;">类型</th>
+         <th style="width: 50px;">默认值</th>
+         <th>描述</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>defaultStyle</td>
+         <td>字符串<code>'string'</code></td>
+         <td>
 "fadinscale"（默认是它）,
 "slideinright",
 "slidbottom",
@@ -22,75 +71,59 @@
 "blur",
 "letin",
 "makeway"
-"sliptop"
-	</pre>
+"sliptop"</td>
+         <td>defaultStyle控制显示与隐藏的动画方式。</td>
+       </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
 
-<h4 id="poplayer-hideorshow">显示与隐藏</h4>
-<p>找到对应的元素进行初始化，并调用显示或隐藏方法。</p>
-<div class="bs-example" style="padding-bottom: 24px;">
-	<div id="poplayer-demo" class="md-modal"></div>
-	<button id="poplayer-show"  class="md-close">显示</button>
-	<button id="poplayer-hide" class="md-close">隐藏</button>
-</div><!-- /example -->
+<h2 id="poplayer-method">方法</h2>
 
-{% highlight html %}
-<!-- 要弹出的层 -->
-<div id="poplayer-demo" class="md-modal"></div>
-
-<script>
-//控件初始化
-$("#poplayer-demo").poplayer({defaultStyle:"newspaper"});
-
-$("#poplayer-show").click(function(){
-	//调用显示方法，并传入defaultStyle显示方式
-	$("#poplayer-demo").poplayer("show","newspaper"); 
-});
-$("#poplayer-hide").click(function(){
-	//隐藏方式在显示的时候就设置好了，不需要传入defaultStyle值。
-	//调用隐藏方法。
-	$("#poplayer-demo").poplayer("hide"); 
-});
-</script>
+<h3>.poplayer("show",[defaultStyle])</h3>
+<p>显示对话框。接受可选参数 <code>defaultStyle</code>。</p>
+{% highlight js %}
+$("#el").poplayer("show",[defaultStyle]);
 {% endhighlight %}
 
-<h4 id="poplayer-callback" >回调与事件监听</h4>
-<p>添加事件监听方法与回调。</p>
-<div class="bs-example" style="padding-bottom: 24px;">
-	<div id="poplayer-demo2" class="md-modal"></div>
-	<button id="poplayer-show2"  class="md-close">显示</button>
-	<button id="poplayer-hide2" class="md-close">隐藏</button>
-</div><!-- /example -->
+<h3>.poplayer("hide")</h3>
+<p>显示对话框。接受可选参数。</p>
+{% highlight js %}
+$("#el").poplayer("hide");
+{% endhighlight %}
 
-{% highlight html %}
-<!-- 要弹出的层 -->
-<div id="poplayer-demo2" class="md-modal"></div>
 
-<script>
-//控件初始化
-$("#poplayer-demo2").poplayer({
-	showAnimateEnd:function(){
-		alert("显示");
-	}/*,
- 	hideAnimateEnd:function(){
-		alert("隐藏");
-	} */
-});
+<h2 id="poplayer-event">事件</h2>
+  <p>Bootstrap 的模态框类提供了一些事件用于监听并执行你自己的代码。</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 150px;">事件类型</th>
+         <th>描述</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>poplayerhideanimateend</td>
+         <td>显示完成。</td>
+       </tr>
+       <tr>
+         <td>poplayershowanimateend</td>
+         <td>隐藏完成。</td>
+       </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+{% highlight js %}
 // 监控一个事件要使用如下规则
 // 控件名称+事件名字  
 // 注意 要全部小写 例如poplayer +hideAnimateEnd  == poplayerhideanimateend
+$("#poplayer-demo2").on("poplayershowanimateend",function(){
+ // do something...
+});
 $("#poplayer-demo2").on("poplayerhideanimateend",function(){
-	alert("隐藏");
-});
-
-$("#poplayer-show2").click(function(){
-	//调用显示方法，并传入defaultStyle显示方式
-	$("#poplayer-demo2").poplayer("show"); 
-});
-$("#poplayer-hide2").click(function(){
-	//隐藏方式在显示的时候就设置好了，不需要传入defaultStyle值。
-	//调用隐藏方法。
-	$("#poplayer-demo2").poplayer("hide"); 
+ // do something...
 });
 {% endhighlight %}
-
 </div>
