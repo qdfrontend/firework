@@ -1,144 +1,142 @@
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/animate.min.css" />
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/animate.style.css" />
-<header class="site__header island">
-  <div class="wrap">
-   <span id="animationSandbox" style="display: block;"><h1 class="site__title mega">Animate.css</h1></span>
-    <span class="beta subhead">Just-add-water CSS animations</span>
-  </div>
-</header><!-- /.site__header -->
+<style>
+#demo{
+	width: 100px;
+	height: 100px;
+	border: 1px solid #B85B5B;
+	text-align: center;
+	line-height: 100px;
+}
+#site__title{
+	color: #f35626;
+	background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: hue 60s infinite linear;
+}
+</style>
+<div id="demo" class="animated ">
+	<span  class="site__title ">Animate</span>
+</div>
+<div>
+	<div label="Attention Seekers">
+	  <a class="btn" value="bounce">bounce</a>
+	  <a class="btn" value="flash">flash</a>
+	  <a class="btn" value="pulse">pulse</a>
+	  <a class="btn" value="rubberBand">rubberBand</a>
+	  <a class="btn" value="shake">shake</a>
+	  <a class="btn" value="swing">swing</a>
+	  <a class="btn" value="tada">tada</a>
+	  <a class="btn" value="wobble">wobble</a>
+	</div>
 
-<main class="site__content island" role="content">
-  <div class="wrap">
-    <form>
-      <select class="input input--dropdown js--animations">
-        <optgroup label="Attention Seekers">
-          <option value="bounce">bounce</option>
-          <option value="flash">flash</option>
-          <option value="pulse">pulse</option>
-          <option value="rubberBand">rubberBand</option>
-          <option value="shake">shake</option>
-          <option value="swing">swing</option>
-          <option value="tada">tada</option>
-          <option value="wobble">wobble</option>
-        </optgroup>
+	<div label="Bouncing Entrances">
+	  <a class="btn" value="bounceIn">bounceIn</a>
+	  <a class="btn" value="bounceInDown">bounceInDown</a>
+	  <a class="btn" value="bounceInLeft">bounceInLeft</a>
+	  <a class="btn" value="bounceInRight">bounceInRight</a>
+	  <a class="btn" value="bounceInUp">bounceInUp</a>
+	</div>
 
-        <optgroup label="Bouncing Entrances">
-          <option value="bounceIn">bounceIn</option>
-          <option value="bounceInDown">bounceInDown</option>
-          <option value="bounceInLeft">bounceInLeft</option>
-          <option value="bounceInRight">bounceInRight</option>
-          <option value="bounceInUp">bounceInUp</option>
-        </optgroup>
+	<div label="Bouncing Exits">
+	  <a class="btn" value="bounceOut">bounceOut</a>
+	  <a class="btn" value="bounceOutDown">bounceOutDown</a>
+	  <a class="btn" value="bounceOutLeft">bounceOutLeft</a>
+	  <a class="btn" value="bounceOutRight">bounceOutRight</a>
+	  <a class="btn" value="bounceOutUp">bounceOutUp</a>
+	</div>
 
-        <optgroup label="Bouncing Exits">
-          <option value="bounceOut">bounceOut</option>
-          <option value="bounceOutDown">bounceOutDown</option>
-          <option value="bounceOutLeft">bounceOutLeft</option>
-          <option value="bounceOutRight">bounceOutRight</option>
-          <option value="bounceOutUp">bounceOutUp</option>
-        </optgroup>
+	<div label="Fading Entrances">
+	  <a class="btn" value="fadeIn">fadeIn</a>
+	  <a class="btn" value="fadeInDown">fadeInDown</a>
+	  <a class="btn" value="fadeInDownBig">fadeInDownBig</a>
+	  <a class="btn" value="fadeInLeft">fadeInLeft</a>
+	  <a class="btn" value="fadeInLeftBig">fadeInLeftBig</a>
+	  <a class="btn" value="fadeInRight">fadeInRight</a>
+	  <a class="btn" value="fadeInRightBig">fadeInRightBig</a>
+	  <a class="btn" value="fadeInUp">fadeInUp</a>
+	  <a class="btn" value="fadeInUpBig">fadeInUpBig</a>
+	</div>
 
-        <optgroup label="Fading Entrances">
-          <option value="fadeIn">fadeIn</option>
-          <option value="fadeInDown">fadeInDown</option>
-          <option value="fadeInDownBig">fadeInDownBig</option>
-          <option value="fadeInLeft">fadeInLeft</option>
-          <option value="fadeInLeftBig">fadeInLeftBig</option>
-          <option value="fadeInRight">fadeInRight</option>
-          <option value="fadeInRightBig">fadeInRightBig</option>
-          <option value="fadeInUp">fadeInUp</option>
-          <option value="fadeInUpBig">fadeInUpBig</option>
-        </optgroup>
+	<div label="Fading Exits">
+	  <a class="btn" value="fadeOut">fadeOut</a>
+	  <a class="btn" value="fadeOutDown">fadeOutDown</a>
+	  <a class="btn" value="fadeOutDownBig">fadeOutDownBig</a>
+	  <a class="btn" value="fadeOutLeft">fadeOutLeft</a>
+	  <a class="btn" value="fadeOutLeftBig">fadeOutLeftBig</a>
+	  <a class="btn" value="fadeOutRight">fadeOutRight</a>
+	  <a class="btn" value="fadeOutRightBig">fadeOutRightBig</a>
+	  <a class="btn" value="fadeOutUp">fadeOutUp</a>
+	  <a class="btn" value="fadeOutUpBig">fadeOutUpBig</a>
+	</div>
 
-        <optgroup label="Fading Exits">
-          <option value="fadeOut">fadeOut</option>
-          <option value="fadeOutDown">fadeOutDown</option>
-          <option value="fadeOutDownBig">fadeOutDownBig</option>
-          <option value="fadeOutLeft">fadeOutLeft</option>
-          <option value="fadeOutLeftBig">fadeOutLeftBig</option>
-          <option value="fadeOutRight">fadeOutRight</option>
-          <option value="fadeOutRightBig">fadeOutRightBig</option>
-          <option value="fadeOutUp">fadeOutUp</option>
-          <option value="fadeOutUpBig">fadeOutUpBig</option>
-        </optgroup>
+	<div label="Flippers">
+	  <a class="btn" value="flip">flip</a>
+	  <a class="btn" value="flipInX">flipInX</a>
+	  <a class="btn" value="flipInY">flipInY</a>
+	  <a class="btn" value="flipOutX">flipOutX</a>
+	  <a class="btn" value="flipOutY">flipOutY</a>
+	</div>
 
-        <optgroup label="Flippers">
-          <option value="flip">flip</option>
-          <option value="flipInX">flipInX</option>
-          <option value="flipInY">flipInY</option>
-          <option value="flipOutX">flipOutX</option>
-          <option value="flipOutY">flipOutY</option>
-        </optgroup>
+	<div label="Lightspeed">
+	  <a class="btn" value="lightSpeedIn">lightSpeedIn</a>
+	  <a class="btn" value="lightSpeedOut">lightSpeedOut</a>
+	</div>
 
-        <optgroup label="Lightspeed">
-          <option value="lightSpeedIn">lightSpeedIn</option>
-          <option value="lightSpeedOut">lightSpeedOut</option>
-        </optgroup>
+	<div label="Rotating Entrances">
+	  <a class="btn" value="rotateIn">rotateIn</a>
+	  <a class="btn" value="rotateInDownLeft">rotateInDownLeft</a>
+	  <a class="btn" value="rotateInDownRight">rotateInDownRight</a>
+	  <a class="btn" value="rotateInUpLeft">rotateInUpLeft</a>
+	  <a class="btn" value="rotateInUpRight">rotateInUpRight</a>
+	</div>
 
-        <optgroup label="Rotating Entrances">
-          <option value="rotateIn">rotateIn</option>
-          <option value="rotateInDownLeft">rotateInDownLeft</option>
-          <option value="rotateInDownRight">rotateInDownRight</option>
-          <option value="rotateInUpLeft">rotateInUpLeft</option>
-          <option value="rotateInUpRight">rotateInUpRight</option>
-        </optgroup>
+	<div label="Rotating Exits">
+	  <a class="btn" value="rotateOut">rotateOut</a>
+	  <a class="btn" value="rotateOutDownLeft">rotateOutDownLeft</a>
+	  <a class="btn" value="rotateOutDownRight">rotateOutDownRight</a>
+	  <a class="btn" value="rotateOutUpLeft">rotateOutUpLeft</a>
+	  <a class="btn" value="rotateOutUpRight">rotateOutUpRight</a>
+	</div>
 
-        <optgroup label="Rotating Exits">
-          <option value="rotateOut">rotateOut</option>
-          <option value="rotateOutDownLeft">rotateOutDownLeft</option>
-          <option value="rotateOutDownRight">rotateOutDownRight</option>
-          <option value="rotateOutUpLeft">rotateOutUpLeft</option>
-          <option value="rotateOutUpRight">rotateOutUpRight</option>
-        </optgroup>
+	<div label="Specials">
+	  <a class="btn" value="hinge">hinge</a>
+	  <a class="btn" value="rollIn">rollIn</a>
+	  <a class="btn" value="rollOut">rollOut</a>
+	</div>
 
-        <optgroup label="Specials">
-          <option value="hinge">hinge</option>
-          <option value="rollIn">rollIn</option>
-          <option value="rollOut">rollOut</option>
-        </optgroup>
+	<div label="Zoom Entrances">
+	  <a class="btn" value="zoomIn">zoomIn</a>
+	  <a class="btn" value="zoomInDown">zoomInDown</a>
+	  <a class="btn" value="zoomInLeft">zoomInLeft</a>
+	  <a class="btn" value="zoomInRight">zoomInRight</a>
+	  <a class="btn" value="zoomInUp">zoomInUp</a>
+	</div>
 
-        <optgroup label="Zoom Entrances">
-          <option value="zoomIn">zoomIn</option>
-          <option value="zoomInDown">zoomInDown</option>
-          <option value="zoomInLeft">zoomInLeft</option>
-          <option value="zoomInRight">zoomInRight</option>
-          <option value="zoomInUp">zoomInUp</option>
-        </optgroup>
+	<div label="Zoom Exits">
+	  <a class="btn" value="zoomOut">zoomOut</a>
+	  <a class="btn" value="zoomOutDown">zoomOutDown</a>
+	  <a class="btn" value="zoomOutLeft">zoomOutLeft</a>
+	  <a class="btn" value="zoomOutRight">zoomOutRight</a>
+	  <a class="btn" value="zoomOutUp">zoomOutUp</a>
+	</div>
 
-        <optgroup label="Zoom Exits">
-          <option value="zoomOut">zoomOut</option>
-          <option value="zoomOutDown">zoomOutDown</option>
-          <option value="zoomOutLeft">zoomOutLeft</option>
-          <option value="zoomOutRight">zoomOutRight</option>
-          <option value="zoomOutUp">zoomOutUp</option>
-        </optgroup>
-      </select>
-
-      <button class="butt js--triggerAnimation">Animate it</button>
-    </form>
-    <hr />
-  </div>
-</main><!-- /.site__content -->
+</div>
 
 <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 <script>
-  function testAnim(x) {
-    $('#animationSandbox').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-      $(this).removeClass();
-    });
-  };
 
-  $(document).ready(function(){
-    $('.js--triggerAnimation').click(function(e){
-      e.preventDefault();
-      var anim = $('.js--animations').val();
-      testAnim(anim);
-    });
+function testAnim(x) {
+	var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+	$('#demo').removeClass().addClass("site__title").addClass(x + ' animated').one(animationEnd, function(){
+		$(this).removeClass();
+	});
+};
 
-    $('.js--animations').change(function(){
-      var anim = $(this).val();
-      testAnim(anim);
-    });
-  });
+$(document).on("click",".btn",function(event){
+	event.preventDefault();
+	var anim = $(this).attr("value");
+	testAnim(anim);
+});
 
 </script>
