@@ -1,23 +1,34 @@
 ﻿
-<h1><center> 搭建jekyll运行环境</center></h1>
-<h2>1.安装配置Ruby和Ruby DevKi</h2>
+<h1 id="installjekyllevri"><center> 搭建jekyll运行环境</center></h1>
+
+<h2 id="installRuby_RubyDevKit">1.安装配置Ruby和Ruby DevKi</h2>
+
 <p>&#160; &#160; &#160; &#160;<strong>(1).首先进入<a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a></strong></p>
+
 <p>&#160; &#160; &#160; &#160;<strong>(2).选择下载适配你系统的Ruby，安装</strong></p>
+
 <p>&#160; &#160; &#160; &#160;<img src="{{site.baseurl}}/images/pic1.png" alt="image" /></p>
+
 <p>&#160; &#160; &#160; &#160;<img src="{{site.baseurl}}/images/pic2.png" alt="image" /></p>
+
 <p>&#160; &#160; &#160; &#160;<strong>(3)选择下载适配你系统的Ruby DevKit</strong></p>
 <p>&#160; &#160; &#160; &#160;<img src="{{site.baseurl}}/images/pic3.png" alt="image" /></p>
+
 <p>&#160; &#160; &#160; &#160;下载完成：</p>
-<p>&#160; &#160; &#160; &#160;下载的是一个自解压文档，执行时会询问解压路径，建议比较简单的如C:\RubyDevKit\。
-<font style="color:red">要注意路径无空格！</font></p>
+
+<p>&#160; &#160; &#160; &#160;下载的是一个自解压文档，执行时会询问解压路径，建议比较简单的如C:\RubyDevKit\。<font style="color:red">要注意路径无空格！</font></p>
+
 <p>&#160; &#160; &#160; &#160;<strong>(4)接下来，你需要初始化DEVKIT并将其绑定到你的Ruby安装，打开命令行工具。</strong></p>
+
 <p>&#160; &#160; &#160; &#160;先导航到你解压的路径，输入：</p>
 <pre><code>     CD C：\ RubyDevKit
 </code></pre>
 
+
 <p>&#160; &#160; &#160; &#160;自动检测Ruby安装，并将它们添加到配置文件中的下一个步骤：</p>
 <pre><code>     ruby dk.rb init
 </code></pre>
+
 
 <p>&#160; &#160; &#160; &#160;安装DEVKIT，它绑定到你的Ruby安装：</p>
 <pre><code>     ruby dk.rb install
@@ -26,7 +37,7 @@
 <p>&#160; &#160; &#160; &#160;安装时出错，解决办法：打开你的安装路径如，C:\RubyDevKit，下的config.yml文件，</p>
 <p>&#160; &#160; &#160; &#160;修改配置，改为你的安装的的ruby的路径（<font style="color:red">要注意必须输入两次</font>）：</p>
 <p>&#160; &#160; &#160; &#160;<img src="{{site.baseurl}}/images/pic4.png" alt="image" /></p>
-<h2>2.安装jekyll</h2>
+<h2 id="installjekyll">2.安装jekyll</h2>
 <p>&#160; &#160; &#160; &#160;<strong>(1).继续刚才的命令行，输入：</strong></p>
 <pre><code>     gem install jekyll
 </code></pre>
@@ -98,7 +109,7 @@ t has failed to respond. - connect(2) (https://rubygems.org/latest_specs.4.8.gz)
 **********************************************************解决************************************************************
 </font></p>
 <h2>3.安装配置代码高亮显示</h2>
-<p>&#160; &#160; &#160; &#160;<strong>(1).安装 Python</strong></p>
+<p id="installPython">&#160; &#160; &#160; &#160;<strong>(1).安装 Python</strong></p>
 <p>&#160; &#160; &#160; &#160;前往 <a href="http://www.python.org/download/">http://www.python.org/download/</a>，下载合适的 Python windows 安装包，如 Python 2.7.6 Windows Installer。 </p>
 <p>&#160; &#160; &#160; &#160;<font style="color:red">请注意，Python 2 可能会更合适，因为暂时 Python 3 可能不会正常工作。</font></p>
 <p>&#160; &#160; &#160; &#160;①<strong>添加安装路径 (如： C:\Python27) 至 PATH。</strong>
@@ -138,7 +149,7 @@ t has failed to respond. - connect(2) (https://rubygems.org/latest_specs.4.8.gz)
 <pre><code>   easy_install Pygments
 </code></pre>
 
-<h2>4.运行jekyll</h2>
+<h2 id="runjekyll">4.运行jekyll</h2>
 <p>&#160; &#160; &#160; &#160;<strong>(1).设置编码选项</strong></p>
 <p>&#160; &#160; &#160; &#160;<strong>在<font style="color:blue">&quot;_config.yml&quot;</font>文件中配置</strong></p>
 <pre><code> encoding: utf-8
