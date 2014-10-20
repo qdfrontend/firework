@@ -1,4 +1,32 @@
 <!-- poplayer begin-->
 <script src="{{ site.baseurl }}/widgets/poplayer.js"></script>
 <script src="{{ site.baseurl }}/widgets/poplayer-demo.js"></script>
+
 <!-- poplayer end-->
+
+<!--[if lt IE 9]>
+  <script type="text/javascript" src="{{ site.baseurl }}/widgets/tipped/excanvas.js"></script>
+<![endif]-->
+<script type="text/javascript" src="{{ site.baseurl }}/widgets/tipped/spinners.min.js"></script> <!-- optional -->
+<script type="text/javascript" src="{{ site.baseurl }}/widgets/tipped/tipped.js"></script>
+<script type='text/javascript'>
+//By creating tooltips after DOM load we make sure that referenced elements are available.
+jQuery(document).ready(function($) {
+  /*
+   * Demonstrations: Skins
+   */
+  Tipped.create("#demo_skins_dark");
+  Tipped.create("#demo_skins_black", { skin: 'black' });
+  Tipped.create("#demo_skins_light", { skin: 'light' });
+
+  Tipped.create("#demo_skins_white", { skin: 'white' });
+  Tipped.create("#demo_skins_yellow", { skin: 'yellow' });
+  Tipped.create("#demo_skins_gray", { skin: 'gray' });
+  
+  Tipped.create("#demo_skins_blue", "Skins are optimized to look good on any background", { skin: 'blue' });
+  Tipped.create("#demo_skins_red", "Great for error messages", { skin: 'red' });
+  Tipped.create("#demo_skins_green", "A nice green skin", { skin: 'green' });
+  
+  Tipped.create("#demo_skins_tiny", "Small black tooltips are always useful", { skin: 'tiny' });
+});
+</script>
