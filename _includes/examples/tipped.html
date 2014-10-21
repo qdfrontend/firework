@@ -1,14 +1,14 @@
+
 <head>
 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/tipped.css" />
 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/tipped-style.css" />
 </head>
-<div id='page'>
 
-  <h1>Tipped is installed on this page</h1>
-  <p>This page demonstrates the installation, the source of this file can be used as an example when installing 
-     <a href='http://projects.nickstakenburg.com/tipped' target='_blank'>Tipped</a> on your domain.
+
+  <h1 id="tipped">自定义Tip组件</h1>
+  <h2 id="tipped-intro">示例</h2>
+  <p>以下有各种样式的例子
   </p>
-  
   <div class='demonstrations'>
     <div id='demo_skins_dark' title="This is the default skin"><!-- [] --></div>
     <div id='demo_skins_black' title="The same skin without a radius"><!-- [] --></div>
@@ -24,21 +24,42 @@
     
     <div id='demo_skins_tiny' class='rightmost'><!-- [] --></div>
   </div>
+  <h2 id="tipped-param">参数</h2>
+  <p>设置弹出tip的样式，你都可以通过设置不同的<font style="color:#c7254e">id</font>来进行控制,将你的鼠标移上去试试吧。</p>
   
-  <h2>What's next?</h2>
-	  <p>Check out the <a href='http://projects.nickstakenburg.com/tipped/documentation' target='_blank'>documentation</a> 
-	  to learn more about customizing tooltips, it has detailed
-	  <a href='http://projects.nickstakenburg.com/tipped/documentation/#installation' target='_blank'>installation instructions</a> 
-	  and examples that will help you get started. 
-  </p>
+  <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 100px;">名称</th>
+         <th style="width: 50px;">类型</th>
+         <th style="width: 50px;">默认值</th>
+         <th>描述</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>id</td>
+         <td>字符串<code>'string'</code></td>
+         <td>
+demo_skins_
+设置不同皮肤的tip&nbsp;&nbsp;&nbsp;&nbsp;
+"dark"
+"black",
+"light",
+"white",
+"gray",
+"yellow",
+"blue",&nbsp;&nbsp;&nbsp;&nbsp;
+"red",
+"green",
+"tiny"
+</td>
+         <td>id控制tip的颜色</td>
+       </tr>
+      </tbody>
+    </table>
+  
 
-	<p>Or <a href='http://projects.nickstakenburg.com/tipped/downloadandlicensing' target='_blank'>purchase a license</a>, 
-	   it will give you access to the <span style='font-style:italic'>full version</span> without watermark.</p>
-	
-	<p class='resources'>
-    <strong>Feedback &amp; bugs</strong>: <a href='http://forum.nickstakenburg.com/index.php?p=/categories/tipped' target='_blank'>Tipped Forum</a><br/>
-	  <strong>Updates on twitter</strong>: <a href='http://twitter.com/tippedjs' target='_blank'>@tippedjs</a><br/>
-	</p>
 
 
-</div>
+
