@@ -1,0 +1,216 @@
+<div id="development_qunit">
+<h1>QUnit</h1>
+<h2>简介</h2>
+<p>QUnit是一个javaScript<strong>单元测试框架</strong>，用来调试代码。是由 jQuery 团队的成员写的，而且是jQuery的官方测试套装。</p>
+<h3>什么是单元测试：</h3>
+<p>在计算机编程中，<strong>单元测试</strong>（又称为模块测试）是针对程序模块(软件设计的最小单位)来进行正确性检验的测试工作。程序单元是应用的最小可测试部件。在过程化编程中，一个单元就是单个程序、函数、过程等；对于面向对象编程，最小单元就是方法，包括基类（超类）、抽象类、或者派生类（子类）中的方法。</p>
+<h3>测试环境：</h3>
+<p>1.创建html页面，引入文件：qunit.css和qunit.js（可官网下载）<br />
+2.引入需要测试的js文件或者在&lt;script&gt; 中写入需要测试的程序；<br />
+3.body内如下：  
+</p>
+<pre><code>&lt;body&gt;
+    &lt;h1 id=&quot;qunit-header&quot;&gt;QUnit Test Suite&lt;/h1&gt;
+    &lt;h2 id=&quot;qunit-banner&quot;&gt;&lt;/h2&gt;
+    &lt;div id=&quot;qunit-testrunner-toolbar&quot;&gt;&lt;/div&gt;
+    &lt;h2 id=&quot;qunit-userAgent&quot;&gt;&lt;/h2&gt;
+    &lt;ol id=&quot;qunit-tests&quot;&gt;&lt;/ol&gt;
+&lt;/body&gt;
+</code></pre>
+
+<h3>开始写测试用例</h3>
+<p>test( name, expected, test )
+一个常规的测试用例。test里是测试用例的具体内容。</p>
+<p>asyncTest( name, expected, test )
+一个异步测试用例。默认的test都是同步的。内容中必须显示地调用start()，测试才会开始。</p>
+<p>expect( amount )
+用于测试代码中，表示在本测试里期待会执行amount个断言，大于或少于这个数量，测试都将失败。</p>
+<p>module( name, lifecycle )
+定义一个名为name的模块。在可选参数lifecycle中，可以定义模块开始和结束的测试内容。</p>
+<p>QUnit.init( )  
+</p>
+<p>启动QUnit测试。如果测试在进行中，则会重新启动。基本不用。  
+</p>
+<h3>示例：</h3>
+<p>在搭建好的测试环境中做的一个简单示例：  
+</p>
+<pre><code>function isEven(val) {
+    return val % 2 === 0;
+}
+ //test()构建一个测试案例，第一个参数是一个将被显示在结果中的字符串，第二个参数是包括我们断言的一个回调函数。
+test('isEven()', function() {
+    //断言
+    ok(isEven(0), 'Zero is an even number');
+    ok(isEven(2), 'So is two');
+    ok(isEven(-4), 'So is negative four');
+    ok(!isEven(1), 'One is not an even number');
+    ok(!isEven(-7), 'Neither is negative seven');
+})
+</code></pre>
+
+<p>运行结果如下:<br />
+<img src="{{site.baseurl}}/images/q01.png" alt="image" /> 
+</p>
+<p>一个断言失败的示例：  
+</p>
+<pre><code>function numType(op){
+    var opType=typeof(op);
+    if(opType==&quot;number&quot;){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+test('numType()', function() {
+    ok(numType(&quot;sd&quot;),&quot;sd不是一个数字&quot;);
+    ok(numType(4),&quot;4是一个数字&quot;);
+})  
+</code></pre>
+
+<p>运行结果如下: <br />
+<img src="{{site.baseurl}}/images/q02.png" alt="image" />
+</p>
+<h3>断言</h3>
+<p>断言是单元测试的基石；<br />
+断言是一个命题，预测你的代码的返回结果。如果预测是假的，断言失败，你就知道出了问题。</p>
+<h4>QUnit支持的断言</h4>
+<p><strong>ok( state, message )</strong><br />
+真假断言，state为true则通过。 </p>
+<p><strong>equal( actual, expected, message )</strong><br />
+相等断言，actual和expected相等（==）则通过,<strong>不能处理数组或对象的比较</strong>。 </p>
+<p><strong>notEqual( actual, expected, message )</strong><br />
+不等断言，actual和expected不相等（!=）则通过。  
+</p>
+<p><strong>strictEqual( actual, expected, message )</strong><br />
+全相等断言，actual和expected全相等（===）则通过。 </p>
+<p><strong>notStrictEqual( actual, expected, message )</strong><br />
+不全相等断言，actual和expected不全相等（===）则通过。</p>
+<p><strong>deepEqual( actual, expected, message )</strong><br />
+递归相等断言，将actual和expected进行深度对比，如果是对象，则将值进行简单对比（相当于==），只有相等才能通过。（包括其子元素都相等，适用于基本类型，数组和对象）则通过。  
+</p>
+<p><strong>notDeepEqual( actual, expected, message )</strong><br />
+递归不相等断言，将actual和expected进行深度对比（包括其子元素都相等，适用于基本类型，数组和对象）则通过。  
+</p>
+<p><strong>propEqual(actual,expected,message)</strong><br />
+一个严格的类型和对象本身的属性值的比较。
+将actual和expected进行深度对比，如果是对象，则将值进行全等对比（相当于===），只有相等才能通过。</p>
+<p><strong>notPropEqual(actual,expected,message)</strong><br />
+将actual和expected进行深度对比，只有不想等才能通过。  
+</p>
+<p><strong>push( result, actual, expected, message )</strong><br />
+报告的一个自定义的断言的结果。  
+</p>
+<p><strong>throws( block [, expected ] [, message ] )</strong><br />
+测试是否一个回调抛出一个异常，和任选地比较泛起错误。</p>
+<h3>异步测试:</h3>
+<p>异步的函数:例如，Ajax请求或通过setTimeout()或sestInterval()调用的方法。<br />
+常规写法，因为断言是被异步执行的，到它被调用的时候，此次测试已经执行完成。  
+</p>
+<p>示例：  
+</p>
+<pre><code>module('Module A');
+////使用了stop()去暂停此次测试案例， 并且在断言被调用以后，使用start()继续。
+test('asynchronous test', function() {
+    // Pause the test first
+    stop();
+
+    setTimeout(function() {
+        ok(true);
+
+        // After the assertion has been called,
+        // continue the test
+        start();
+    }, 100)
+});
+module('Module B');
+//异步测试用例,内容中必须显示地调用start()，测试才会开始.
+asyncTest('asynchronous test',1, function() {
+    // The test is automatically paused
+
+    setTimeout(function() {
+        ok(true);
+
+        // After the assertion has been called,
+        // continue the test
+        start();
+    }, 100)
+})
+</code></pre>
+
+<p>运行结果如下：  
+</p>
+<p><img src="{{site.baseurl}}/images/q04.png" alt="image" /></p>
+<h3>回调：</h3>
+<p>用途：当集成到其他工具如CI服务器的量子系统，使用这些回调的API读取测试结果。  
+</p>
+<p>QUnit.log({ result, actual, expected, message })
+每当断言执行结束后会调用此函数。</p>
+<p>QUnit.testStart({ name })
+每当一个测试执行开始时会调用此函数。</p>
+<p>QUnit.testDone({ name, failed, passed, total })
+每当一个测试执行结束后会调用此函数。</p>
+<p>QUnit.moduleStart({ name })
+每当一个模块执行开始时会调用此函数。</p>
+<p>QUnit.moduleDone({ name, failed, passed, total })
+每当一个模块执行结束后会调用此函数。</p>
+<p>QUnit.begin()
+当QUnit开始时会调用此函数。</p>
+<p>QUnit.done()
+当QUnit结束后会调用此函数。</p>
+<p>示例：  
+</p>
+<pre><code>function isEven(val) {
+    return val % 2 === 0;
+}
+module('Module B');      
+test('isEven()', function() {
+    ok(isEven(0), 'Zero is an even number');
+    ok(isEven(2), 'So is two');
+    ok(isEven(-4), 'So is negative four');
+    ok(!isEven(1), 'One is not an even number');
+    ok(!isEven(-7), 'Neither is negative seven');
+})
+
+
+function numType(op){
+    var opType=typeof(op);
+    if(opType==&quot;number&quot;){
+        return true;
+    }else{
+        return false;
+    }
+}
+module('Module A'); 
+test('numType()', function() {
+    ok(numType(&quot;sd&quot;),&quot;sd不是一个数字&quot;);
+    ok(numType(4),&quot;4是一个数字&quot;);
+})
+QUnit.begin(function( details ) {
+    console.log( &quot;回调begin()&quot;,&quot;Test amount:&quot;, details.totalTests );
+});
+
+QUnit.done(function( details ) {
+  console.log(&quot;回调done()&quot;, &quot;Total: &quot;, details.total, &quot; Failed: &quot;, details.failed, &quot; Passed: &quot;, details.passed, &quot; Runtime: &quot;, details.                                          runtime );
+});
+QUnit.log(function( details ) {
+    console.log(&quot;回调log()&quot;, &quot;Log: &quot;, details.result, details.message );
+});
+QUnit.moduleDone(function( details ) {
+    console.log(&quot;回调moduleDone()&quot;, &quot;Finished running: &quot;, details.name, &quot;Failed/total: &quot;, details.failed, details.total );
+});
+QUnit.moduleStart(function( details ) {
+    console.log( &quot;回调moduleStart()&quot;,&quot;Now running: &quot;, details.name );
+});
+QUnit.testDone(function( details ) {
+    console.log( &quot;回调testDone()&quot;,&quot;Finished running: &quot;, details.module, details.name, &quot;Failed/total: &quot;, details.failed, details.total, details.duration );
+});
+QUnit.testStart(function( details ) {
+    console.log(  &quot;回调testStart()&quot;,&quot;Now running: &quot;, details.module, details.name );
+});  
+</code></pre>
+
+<p>控制台输出如下：  
+</p>
+<p><img src="{{site.baseurl}}/images/q03.png" alt="image" /></p>
+</div>
