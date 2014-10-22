@@ -1,5 +1,6 @@
 
 <head>
+
 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/tipped.css" />
 <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/tipped-style.css" />
 </head>
@@ -24,8 +25,41 @@
     
     <div id='demo_skins_tiny' class='rightmost'><!-- [] --></div>
   </div>
+  <pre><code> &lt;div class='demonstrations'&gt;
+   &lt;div id='demo_skins_dark' title=&quot;This is the default skin&quot;&gt;&lt;!-- [] --&gt;&lt;/div&gt;
+   &lt;div id='demo_skins_black' title=&quot;The same skin without a radius&quot;&gt;&lt;!-- [] --&gt;&lt;/div&gt;
+   &lt;div id='demo_skins_light' title=&quot;A light variant&quot;&gt;&lt;!-- [] --&gt;&lt;/div&gt;
+   &lt;div id='demo_skins_white' title=&quot;White is probably the most popular skin&quot;&gt;&lt;!-- [] --&gt;&lt;/div&gt;
+   &lt;div id='demo_skins_gray' title=&quot;Gray works with anything&quot;&gt;&lt;!-- [] --&gt;&lt;/div&gt;
+   &lt;div id='demo_skins_yellow' title=&quot;The classic yellow tooltip&quot;&gt;&lt;!-- [] --&gt;&lt;/div&gt;
+   &lt;div id='demo_skins_blue'&gt;&lt;!-- [] --&gt;&lt;/div&gt;
+   &lt;div id='demo_skins_red'&gt;&lt;!-- [] --&gt;&lt;/div&gt;
+   &lt;div id='demo_skins_green'&gt;&lt;!-- [] --&gt;&lt;/div&gt;
+   &lt;div id='demo_skins_tiny' class='rightmost'&gt;&lt;!-- [] --&gt;&lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+ jQuery(document).ready(function($) {
+   Tipped.create(&quot;#demo_skins_dark&quot;);
+   Tipped.create(&quot;#demo_skins_black&quot;, { skin: 'black' });
+   Tipped.create(&quot;#demo_skins_light&quot;, { skin: 'light' });
+
+   Tipped.create(&quot;#demo_skins_white&quot;, { skin: 'white' });
+   Tipped.create(&quot;#demo_skins_yellow&quot;, { skin: 'yellow' });
+   Tipped.create(&quot;.demo_skins_yellowB&quot;, &quot;This is a new TIP&quot;,{ skin: 'yellow' });
+   Tipped.create(&quot;#demo_skins_gray&quot;, { skin: 'gray' });
+   Tipped.create(&quot;#demo_skins_yellowA&quot;, { skin: 'yellow' });
+   Tipped.create(&quot;#demo_skins_blue&quot;, &quot;Skins are optimized to look good on any background&quot;, { skin: 'blue' });
+   Tipped.create(&quot;[name*=demo_skins_redA]&quot;, &quot;This is a new TIP&quot;, { skin: 'red' });
+   Tipped.create(&quot;#demo_skins_red&quot;, &quot;This is a new TIP&quot;, { skin: 'red' });
+   Tipped.create(&quot;#demo_skins_green&quot;, &quot;A nice green skin&quot;, { skin: 'green' });
+
+   Tipped.create(&quot;#demo_skins_tiny&quot;, &quot;Small black tooltips are always useful&quot;, { skin: 'tiny' });
+ });
+&lt;/script&gt;
+</code></pre>
   <h2 id="tipped-param">参数</h2>
-  <p>设置弹出tip的样式，你都可以通过设置不同的<font style="color:#c7254e">id</font>来进行控制。</p>
+  <p>设置弹出tip的样式</p>
   
   <table class="table table-bordered table-striped">
       <thead>
@@ -41,8 +75,8 @@
          <td>id</td>
          <td>字符串<code>'string'</code></td>
          <td>
-demo_skins_
-设置不同皮肤的tip&nbsp;&nbsp;&nbsp;&nbsp;
+<font style="font-size:12px">skin
+设置不同皮肤的tip</font>&nbsp;&nbsp;&nbsp;&nbsp;
 "dark"
 "black",
 "light",
@@ -58,8 +92,51 @@ demo_skins_
        </tr>
       </tbody>
     </table>
-  
-
+	<h2 id="tipped-method">方法</h2>
+你都可以通过设置不同的<font style="color:#c7254e">id,class，name甚至其他自定义属性</font>来进行控制,如:<br><br>
+<h4>①使用设置id的方式：</h4>1.在html中创建一个元素，例如你将给一个DIV的tip改成黄色，你用设置ID的方式，title的内容就是tip里的内容：<br>
+<pre><code>&quot;&lt;div id='demo_skins_yellow' title=&quot;This is a demo&quot;&gt;&lt;!-- [] --&gt;&lt;/div&gt;&quot;
+</code></pre>
+<div class='demonstrations'>
+<div id='demo_skins_yellowA' title="The classic yellow tooltip"><!-- [] --></div>
+</div>
+2.然后绑定弹出tip事件，传三个参数：需要绑定的元素，tip里的内容，和弹框的颜色（不设置默认为dark）：
+<pre><code>&lt;script type='text/javascript'&gt;
+    jQuery(document).ready(function($) {
+  Tipped.create(&quot;#demo_skins_yellowA&quot;,{ skin: 'yellow' });
+  });
+&lt;/script&gt;
+</code></pre>
+<br>
+<h4>②使用设置class的方式：</h4>1.在html中创建一个元素，例如你将给一个DIV的tip改成黄色，你也可以用设置class的方式：<br>
+<pre><code>&quot;&lt;div class='demo_skins_yellow' title=&quot;This is a demo&quot;&gt;&lt;!-- [] --&gt;&lt;/div&gt;&quot;
+</code></pre>
+2.然后绑定弹出tip事件：
+<pre><code>&lt;script type='text/javascript'&gt;
+    jQuery(document).ready(function($) {
+  Tipped.create(&quot;.demo_skins_yellowB&quot;,&quot;This is a new TIP&quot; { skin: 'yellow' });//还需要说的一点如果传一个新的title内容的参数如："This is a new TIP"，那么这个参数会替换掉原来的title的内容
+  });
+&lt;/script&gt;
+</code></pre>
+  <div class='demonstrations'>
+<div class='demo_skins_yellowB' title="The classic yellow tooltip"><!-- [] --></div>
+</div>
+<br>
+<h4>③使用设置自定义属性的方式：</h4>1.在html中创建一个元素，例如你将给一个DIV的tip改成黄色，你也可以用设置自定义属性的方式，例如使用name：<br>
+<pre><code>&quot;&lt;div name='demo_skins_redA' title=&quot;This is a demo&quot;&gt;&lt;!-- [] --&gt;&lt;/div&gt;&quot;
+</code></pre>
+2.然后绑定弹出tip事件：
+<pre><code>&lt;script type='text/javascript'&gt;
+    jQuery(document).ready(function($) {
+  Tipped.create(&quot;[name=demo_skins_redA]&quot;,&quot;This is a new TIP&quot; { skin: 'red' });//还需要说的一点如果传一个新的title内容的参数如："This is a new TIP"，那么这个参数会替换掉原来的title的内容
+  });
+&lt;/script&gt;
+</code></pre>
+  <div class='demonstrations'>
+<div name='demo_skins_redA' title="This is a demo"><!-- [] --></div>
+</div>
+<br>
+<font style="font-size:20px;color:red">至此你应该可以发现，你可以使用jq任何选择器来绑定添加Tipped组件/font>
 
 
 
