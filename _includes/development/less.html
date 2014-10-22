@@ -1,0 +1,70 @@
+<div id="development_less">
+<h1>LESS 编码规范</h1>
+<h2>语法</h2>
+<ul>
+<li>用两个空格来代替制表符（tab） -这是唯一能保证在所有环境下获得一致展现的方法。  
+</li>
+<li>为选择器分组时，将单独的选择器单独放在一行。  
+</li>
+<li>为了代码的易读性，在每个声明块的左花括号前添加一个空格。  
+</li>
+<li>声明块的右花括号应当单独成行。</li>
+<li>每条声明语句的 : 后应该插入一个空格。</li>
+<li>为了获得更准确的错误报告，每条声明都应该独占一行。</li>
+<li>所有声明语句都应当以分号结尾。最后一条声明语句后面的分号是可选的，但是，如果省略这个分号，你的代码可能更易出错。</li>
+<li>对于以逗号分隔的属性值，每个逗号后面都应该插入一个空格（例如，box-shadow）。</li>
+<li>不要在 rgb()、rgba()、hsl()、hsla() 或 rect() 值的内部的逗号后面插入空格。这样利于从多个属性值（既加逗号也加空格）中区分多个颜色值（只加逗号，不加空格）。</li>
+<li>对于属性值或颜色参数，省略小于 1 的小数前面的 0 （例如，.5 代替 0.5；-.5px 代替 -0.5px）。</li>
+<li>十六进制值应该全部小写，例如，#fff。在扫描文档时，小写字符易于分辨，因为他们的形式更易于区分。</li>
+<li>尽量使用简写形式的十六进制值，例如，用 #fff 代替#ffffff。</li>
+<li>为选择器中的属性添加双引号，例如，input[type=&quot;text&quot;]。<a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">只有在某些情况下是可选的</a>，但是，为了代码的一致性，建议都加上双引号。</li>
+<li>避免为 0 值指定单位，例如，用 margin: 0; 代替margin: 0px;。  
+</li>
+</ul>
+<p>对于这里用到的术语有疑问吗？请参考 Wikipedia 上的 <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax">syntax section of the Cascading Style Sheets article。</a>  
+</p>
+<pre><code>/* Bad CSS */
+.selector, .selector-secondary, .selector[type=text] {
+padding:15px;
+ margin:0px 0px 15px;
+ background-color:rgba(0, 0, 0, 0.5);
+ box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFFFFF
+}
+
+/* Good CSS */
+.selector,
+.selector-secondary,
+.selector[type=&quot;text&quot;] {
+padding: 15px;
+margin-bottom: 15px;
+background-color: rgba(0,0,0,.5);
+box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
+}
+</code></pre>
+
+<h2>声明顺序</h2>
+<p>相关的属性声明应当归为一组，并按照下面的顺序排列：<br />
+1. Positioning<br />
+2. Box model<br />
+3. Typographic<br />
+4. Visual  <br />
+由于定位（positioning）可以从正常的文档流中移除元素，并且还能覆盖盒模型（box model）相关的样式，因此排在首位。盒模型排在第二位，因为它决定了组件的尺寸和位置。  
+</p>
+<p>其他属性只是影响组件的内部（inside）或者是不影响前两组属性，因此排在后面。  
+</p>
+<p>完整的属性列表及其排列顺序请参考 <a href="http://twitter.github.com/recess">Recess</a>。</p>
+<h2>带前缀的属性</h2>
+<p>当使用特定厂商的带有前缀的属性时，通过缩进的方式，让每个属性的值在垂直方向对齐，这样便于多行编辑。  
+</p>
+<pre><code>/* Prefixed properties */
+.selector {
+ -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+</code></pre>
+
+<h2>注释</h2>
+<p>代码是由人编写并维护的。请确保你的代码能够自描述、注释良好并且易于他人理解。好的代码注释能够传达上下文关系和代码目的。不要简单地重申组件或 class 名称。  
+</p>
+<p>对于较长的注释，务必书写完整的句子；对于一般性注解，可以书写简洁的短语。</p>
+</div>
