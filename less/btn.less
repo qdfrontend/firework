@@ -1,0 +1,203 @@
+
+a:hover{cursor:pointer;}
+
+/*
+默认样式
+*/
+@primary_color1:#f5f5f5;  /*基本btn 常态背景色*/
+@primary_color2:#f0f0f0;  /*基本btn 常态背景色*/
+@primary_color3:#eaeaea;  /*基本btn 常态背景色*/
+
+@primary_color_hover:red;/*基本btn 悬停背景色*/
+@primary_color_active:#f0f0f0;/*基本btn 点击背景色*/
+
+@primary_border_color:#adadad;
+@primary_border_color_hover:#1bace7;/*基本btn  边框颜色*/
+
+
+@primary_h:32px;/*基本btn 高度*/
+@primary_lineh:32px;/*基本btn 行高*/
+@primary_padding_w:25.6px;/*基本btn 左右padding*/
+@primary_padding_h:0px;/*基本btn 上下padding*/
+
+
+@primary_fontsize:14px;/*基本btn 字号*/
+@primary_fontfamily:"微软雅黑";/*基本btn 字体*/
+@primary_fontcolor:#646464;/*基本btn 字颜色*/
+
+
+/*
+风格一
+*/
+
+@btn_primary_bcolor: #60fba6;/*背景颜色*/
+@btn_primary_bcolor_hover:#82feba;/*悬停背景颜色*/
+@btn_primary_bcolor_active: #47ee92;/*点击背景颜色*/
+
+@btn_primary_fontcolor:#fff;/*字体颜色*/
+@btn_primary_fontcolor_active:#fff;/*字体点击颜色*/
+
+/*
+风格2
+*/
+
+@btn_success_bcolor: #0fafeb;/*背景颜色*/
+@btn_success_bcolor_hover:#0fa5dd; /*悬停背景颜色*/
+@btn_success_bcolor_active:#0c91c3;/*点击背景颜色*/
+
+@btn_success_fontcolor:#fff;/*字体颜色*/
+@btn_success_fontcolor_active:#fff;/*字体点击颜色*/
+ 
+
+/*大*/
+@btn_large_fontsize:19px;
+@btn_large_h:38.4px;
+@btn_large_lineh:38.4px;
+@btn_large_padding_v:0px;
+@btn_large_padding_h:30.72px;
+@btn_large_bh:@btn_large_h+2px;
+/*中*/
+@btn_small_fontsize:12px;
+@btn_small_h:25.6px;
+@btn_small_lineh:25.6px;;
+@btn_small_padding_v:0px;
+@btn_small_padding_h: 20.48px;
+@btn_small_bh:@btn_small_h+2px;
+/*小*/
+@btn_tiny_fontsize:11px;
+@btn_tiny_h:22.4px;
+@btn_tiny_lineh:22.4px;;
+@btn_tiny_padding_v:0px;
+@btn_tiny_padding_h:17.92px;
+@btn_tiny_bh:@btn_tiny_h+2px;
+
+@primary_radius_gloabl:4px;
+
+ 
+
+
+
+
+/*
+设置圆角
+*/
+
+.border-radius(@primary_radius) {
+  -webkit-border-radius:@primary_radius ;
+  -moz-border-radius:@primary_radius ;
+  -ms-border-radius:@primary_radius ;
+  -o-border-radius:@primary_radius;
+   border-radius:@primary_radius;
+}
+
+
+.fw-btn-radius{.border-radius(5px);}
+
+
+/*块*/
+.fw-btn-block {
+  display: block;
+}
+ 
+ 
+/*默认按钮*/
+.fw-btn{
+  background:-webkit-linear-gradient(@primary_color1,@primary_color2,@primary_color3);
+	height:@primary_h;
+	line-height:@primary_lineh;
+	padding:@primary_padding_h@primary_padding_w;
+	font-size:@primary_fontsize;
+	font-family: @primary_fontfamily;
+	color:@primary_fontcolor;
+	display: -moz-inline-stack;
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	zoom: 1;
+	*display: inline;
+	margin: 0;
+	text-decoration: none;
+	text-align: center;
+	border:1px solid primary_border_color;
+	.border-radius(6px);
+ }
+.fw-btn:hover {
+	  background-color:@primary_color_hover;
+	   border:1px solid  primary_border_color_hover;
+ }
+.fw-btn:active {
+	  background:@primary_color_active;
+	   border:1px solid  primary_border_color_hover;
+ }
+ 
+ /*
+   不同尺寸的按钮
+ */
+
+.fw-btn-large {
+  font-size:@btn_large_fontsize;
+  height: @btn_large_h;
+  line-height:@btn_large_lineh;
+  padding: @btn_large_padding_v@btn_large_padding_h;
+}
+input.fw-btn-large, button.fw-btn-large {
+  height: @btn_large_bh;
+}
+
+.fw-btn-small {
+  font-size:@btn_small_fontsize;
+  height:@btn_small_h;
+  line-height:@btn_small_lineh;
+  padding:@btn_tiny_padding_v @btn_tiny_padding_h;
+}
+input.fw-btn-small, button.fw-btn-small {
+  height: @btn_small_bh;
+}
+.fw-btn-tiny {
+  font-size: @btn_tiny_fontsize;
+  height:@btn_tiny_h;
+  line-height:@btn_tiny_lineh;
+  padding: @btn_tiny_padding_v@btn_tiny_padding_h;
+}
+input.fw-btn-tiny, button.fw-btn-tiny {
+  height: @btn_tiny_bh;
+}
+
+/*
+风格1
+*/
+
+.fw-btn.fw-btn-primary {
+   background:@btn_primary_bcolor;
+   color:@btn_primary_fontcolor;
+   
+ }
+
+.fw-btn.fw-btn-primary:hover {
+	background: @btn_primary_bcolor_hover;
+ }
+.fw-btn.fw-btn-primary:active {
+	  background:@btn_primary_bcolor_active;
+	  color: @btn_primary_fontcolor_active;
+ }
+ 
+ /*
+风格2
+*/
+ .fw-btn.fw-btn-success {
+  background:@btn_success_bcolor;
+  color:@btn_success_fontcolor;
+   
+  }
+ .fw-btn.fw-btn-succcess:hover {
+	background: @btn_success_bcolor_hover;
+  }
+ .fw-btn.fw-btn-succcess:active {
+	  background:@btn_success_bcolor_active;
+	  color:@btn_success_fontcolor_active;
+ }
+ 
+ 
+ 
+
+ 

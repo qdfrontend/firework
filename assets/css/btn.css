@@ -1,0 +1,146 @@
+a:hover {
+  cursor: pointer;
+}
+/*
+默认样式
+*/
+/*基本btn 常态背景色*/
+/*基本btn 常态背景色*/
+/*基本btn 常态背景色*/
+/*基本btn 悬停背景色*/
+/*基本btn 点击背景色*/
+/*基本btn  边框颜色*/
+/*基本btn 高度*/
+/*基本btn 行高*/
+/*基本btn 左右padding*/
+/*基本btn 上下padding*/
+/*基本btn 字号*/
+/*基本btn 字体*/
+/*基本btn 字颜色*/
+/*
+风格一
+*/
+/*背景颜色*/
+/*悬停背景颜色*/
+/*点击背景颜色*/
+/*字体颜色*/
+/*字体点击颜色*/
+/*
+风格2
+*/
+/*背景颜色*/
+/*悬停背景颜色*/
+/*点击背景颜色*/
+/*字体颜色*/
+/*字体点击颜色*/
+/*大*/
+/*中*/
+/*小*/
+/*
+设置圆角
+*/
+.fw-btn-radius {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/*块*/
+.fw-btn-block {
+  display: block;
+}
+/*默认按钮*/
+.fw-btn {
+  background: -webkit-linear-gradient(#f5f5f5, #f0f0f0, #eaeaea);
+  height: 32px;
+  line-height: 32px;
+  padding: 0px 25.6px;
+  font-size: 14px;
+  font-family: "微软雅黑";
+  color: #646464;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid primary_border_color;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+}
+.fw-btn:hover {
+  background-color: #ff0000;
+  border: 1px solid  primary_border_color_hover;
+}
+.fw-btn:active {
+  background: #f0f0f0;
+  border: 1px solid  primary_border_color_hover;
+}
+/*
+   不同尺寸的按钮
+ */
+.fw-btn-large {
+  font-size: 19px;
+  height: 38.4px;
+  line-height: 38.4px;
+  padding: 0px 30.72px;
+}
+input.fw-btn-large,
+button.fw-btn-large {
+  height: 40.4px;
+}
+.fw-btn-small {
+  font-size: 12px;
+  height: 25.6px;
+  line-height: 25.6px;
+  padding: 0px 17.92px;
+}
+input.fw-btn-small,
+button.fw-btn-small {
+  height: 27.6px;
+}
+.fw-btn-tiny {
+  font-size: 11px;
+  height: 22.4px;
+  line-height: 22.4px;
+  padding: 0px 17.92px;
+}
+input.fw-btn-tiny,
+button.fw-btn-tiny {
+  height: 24.4px;
+}
+/*
+风格1
+*/
+.fw-btn.fw-btn-primary {
+  background: #60fba6;
+  color: #ffffff;
+}
+.fw-btn.fw-btn-primary:hover {
+  background: #82feba;
+}
+.fw-btn.fw-btn-primary:active {
+  background: #47ee92;
+  color: #ffffff;
+}
+/*
+风格2
+*/
+.fw-btn.fw-btn-success {
+  background: #0fafeb;
+  color: #ffffff;
+}
+.fw-btn.fw-btn-succcess:hover {
+  background: #0fa5dd;
+}
+.fw-btn.fw-btn-succcess:active {
+  background: #0c91c3;
+  color: #ffffff;
+}
