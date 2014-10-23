@@ -1,0 +1,42 @@
+
+<div class="md-section-divider"></div>
+
+<div class="md-section-divider"></div>
+
+<h1 id="plupload">ui.plupload上传文件<small><a target="_blank" href="http://plupload.com/plupload/docs/api/index.html">详细文档</a></small></h1>
+
+<p><code>ui.plupload</code> <code>上传附件</code></p>
+
+<hr>
+
+<p><strong>Plupload</strong>是有TinyMCE的开发者开发的，为您的内容管理系统或是类似上传程序提供一个高度可用的上传插件。Plupload 目前分为一个核心API 和一个jQuery上传队列部件，这样使你可以直接使用或是自己定制。</p>
+
+<h2 id="load-intro">注意：</h2>
+
+<blockquote class="white-blockquote">
+  <ul>
+  <li>分块:chrome和firefox 4+ 支持。</li>
+  <li>拖拽适用于firefox和webkit内核的浏览器，windows版的safari还存在一些问题待解决。 </li>
+  <li>图片缩放仅在firefox3.5+和chrome上支持，safari/opera 不支持直接数据访问选定的文件。</li>
+  <li>目前所有的浏览器不支持文件类型过滤。但是，我们填写HTML5的接受文件类型过滤属性，一旦有支持它会工作。 </li>
+  <li>多文件上传仅支持gecko和webkit内核的浏览器。</li>
+  </ul>
+</blockquote>
+
+<h2 id="load-method">使用方法</h2>
+下载 <br>
+plupload：<a href="http://www.plupload.com/examples/uiwww.plupload.com/examples/ui" target="_blank">http://www.plupload.com/examples/uiwww.plupload.com/examples/ui</a> <br>
+jquery-ui：<a href="http://jqueryui.com/" target="_blank">http://jqueryui.com/</a> <br>
+页面引入： <strong>jquery-ui.css</strong> 、<strong>jquery.ui.plupload.css</strong>、 <strong>jquery-1.8.3.js</strong>、 <strong>jquery-ui.js</strong>、 <strong>plupload.full.min.js</strong>、 <strong>jquery.ui.plupload.js</strong> </p>
+
+<h3 id="load-add">页面添加</h3>
+
+<div class="md-section-divider"></div>
+
+<pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-python"><span class="pun">&lt;</span><span class="pln">div id</span><span class="pun">=</span><span class="str">"uploader"</span><span class="pun">&gt;</span></code></li><li class="L1"><code class="language-python"><span class="pln">    </span><span class="pun">&lt;</span><span class="pln">p</span><span class="pun">&gt;</span><span class="typ">Your</span><span class="pln"> browser </span><span class="kwd">do</span><span class="pln"> </span><span class="kwd">not</span><span class="pln"> have </span><span class="typ">Flash</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Silverlight</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> HTML5 support</span><span class="pun">.&lt;/</span><span class="pln">p</span><span class="pun">&gt;</span></code></li><li class="L2"><code class="language-python"><span class="pun">&lt;/</span><span class="pln">div</span><span class="pun">&gt;</span></code></li></ol></pre>
+
+<h3 id="load-js">JS添加</h3>
+
+<div class="md-section-divider"></div>
+
+<pre class="prettyprint linenums prettyprinted"><ol class="linenums"><li class="L0"><code class="language-python"><span class="pln">$</span><span class="pun">(</span><span class="str">"#uploader"</span><span class="pun">).</span><span class="pln">plupload</span><span class="pun">({</span></code></li><li class="L1"><code class="language-python"><span class="pln">        runtimes </span><span class="pun">:</span><span class="pln"> </span><span class="str">'html5,flash,silverlight,html4'</span><span class="pun">,</span></code></li><li class="L2"><code class="language-python"><span class="pln">        url </span><span class="pun">:</span><span class="pln"> </span><span class="str">"uploads"</span><span class="pun">,</span><span class="pln"> </span></code></li><li class="L3"><code class="language-python"><span class="pln">        max_file_size </span><span class="pun">:</span><span class="pln"> </span><span class="str">'2mb'</span><span class="pun">,//文件上传最大限制</span></code></li><li class="L4"><code class="language-python"><span class="pln">        chunk_size</span><span class="pun">:</span><span class="pln"> </span><span class="str">'1mb'</span><span class="pun">,//上传分块每块的大小</span></code></li><li class="L5"><code class="language-python"><span class="pln">        resize </span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L6"><code class="language-python"><span class="pln">            width </span><span class="pun">:</span><span class="pln"> </span><span class="lit">200</span><span class="pun">,</span></code></li><li class="L7"><code class="language-python"><span class="pln">            height </span><span class="pun">:</span><span class="pln"> </span><span class="lit">200</span><span class="pun">,</span></code></li><li class="L8"><code class="language-python"><span class="pln">            quality </span><span class="pun">:</span><span class="pln"> </span><span class="lit">90</span><span class="pun">,</span></code></li><li class="L9"><code class="language-python"><span class="pln">            crop</span><span class="pun">:</span><span class="pln"> true </span></code></li><li class="L0"><code class="language-python"><span class="pln">        </span><span class="pun">},//缩略图</span></code></li><li class="L1"><code class="language-python"><span class="pln">        filters </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span></code></li><li class="L2"><code class="language-python"><span class="pln">            </span><span class="pun">{</span><span class="pln">title </span><span class="pun">:</span><span class="pln"> </span><span class="str">"Image files"</span><span class="pun">,</span><span class="pln"> extensions </span><span class="pun">:</span><span class="pln"> </span><span class="str">"jpg,gif,png"</span><span class="pun">},</span></code></li><li class="L3"><code class="language-python"><span class="pln">            </span><span class="pun">{</span><span class="pln">title </span><span class="pun">:</span><span class="pln"> </span><span class="str">"Zip files"</span><span class="pun">,</span><span class="pln"> extensions </span><span class="pun">:</span><span class="pln"> </span><span class="str">"zip,avi"</span><span class="pun">}</span></code></li><li class="L4"><code class="language-python"><span class="pln">        </span><span class="pun">],//上传文件时限制的上传文件类型</span></code></li><li class="L5"><code class="language-python"><span class="pln">        rename</span><span class="pun">:</span><span class="pln"> true</span><span class="pun">,//上传之前可重命名</span></code></li><li class="L6"><code class="language-python"><span class="pln">        sortable</span><span class="pun">:</span><span class="pln"> true</span><span class="pun">,</span></code></li><li class="L7"><code class="language-python"><span class="pln">        dragdrop</span><span class="pun">:</span><span class="pln"> true</span><span class="pun">,//可拖拽</span></code></li><li class="L8"><code class="language-python"><span class="pln">        views</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L9"><code class="language-python"><span class="pln">            list</span><span class="pun">:</span><span class="pln"> true</span><span class="pun">,</span></code></li><li class="L0"><code class="language-python"><span class="pln">            thumbs</span><span class="pun">:</span><span class="pln"> true</span><span class="pun">,</span><span class="pln"> </span></code></li><li class="L1"><code class="language-python"><span class="pln">            active</span><span class="pun">:</span><span class="pln"> </span><span class="str">'thumbs'</span></code></li><li class="L2"><code class="language-python"><span class="pln">        </span><span class="pun">},</span></code></li><li class="L3"><code class="language-python"><span class="pln">        flash_swf_url </span><span class="pun">:</span><span class="pln"> </span><span class="str">'js/Moxie.swf'</span><span class="pun">,//</span><span class="pln">flash</span><span class="pun">文件地址</span></code></li><li class="L4"><code class="language-python"><span class="pln">        silverlight_xap_url </span><span class="pun">:</span><span class="pln"> </span><span class="str">'js/Moxie.xap'</span><span class="pun">//</span><span class="pln">silverlight</span><span class="pun">文件地址</span></code></li><li class="L5"><code class="language-python"><span class="pln">    </span><span class="pun">});</span></code></li></ol></pre>
